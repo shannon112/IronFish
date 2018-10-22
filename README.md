@@ -24,3 +24,7 @@ Simple ROS car
 |O| Terminal Socket * 1 | Intel Realsense D435     | -     |
 |P| RS232 adapter * 1 | null modem DCE-DCE   | -     |
 |Q| Switch * 1 | any   | -     |
+
+
+### Wiring
+<img src="https://github.com/shannon112/IronFish/blob/master/IMG_0545.png" width="600">
