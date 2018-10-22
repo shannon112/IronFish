@@ -1,7 +1,7 @@
 # IronFish
 Simple ROS car
-<img src="https://github.com/shannon112/IronFish/blob/master/IMG_0548.png" width="400">
-<img src="https://github.com/shannon112/IronFish/blob/master/IMG_0549.png" width="400">
+<img src="https://github.com/shannon112/IronFish/blob/master/IMG_0543.png" width="300">
+<img src="https://github.com/shannon112/IronFish/blob/master/IMG_0544.png" width="300">
 
 
 ### Materials
