@@ -1,7 +1,7 @@
 # IronFish
 Simple ROS car  
-<img src="https://github.com/shannon112/IronFish/blob/master/IMG_0543.png" width="300">
-<img src="https://github.com/shannon112/IronFish/blob/master/IMG_0544.png" width="300">
+<img src="https://github.com/shannon112/IronFish/blob/master/ironfish_hardware/IMG_0543.png" width="300">
+<img src="https://github.com/shannon112/IronFish/blob/master/ironfish_hardware/IMG_0544.png" width="300">
 
 
 ### Materials
@@ -27,4 +27,4 @@ Simple ROS car
 |R| RGB-D Camera * 1     | Microsoft Kinect 1414  |  https://www.evernote.com/shard/s315/sh/66dd6958-0004-4f01-adf3-c85db65ba50b/0391136fb9a61bebaf4f77235412f5ee   |
 
 ### Wiring
-<img src="https://github.com/shannon112/IronFish/blob/master/IMG_0545.png" width="600">
+<img src="https://github.com/shannon112/IronFish/blob/master/ironfish_hardware/IMG_0545.png" width="600">
