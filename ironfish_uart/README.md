@@ -31,3 +31,25 @@ Already built-in or
 sudo apt-get install libboost-all-dev
 ```
 
+### Builts
+A library calls ironfish_uart.
+```
+add_library(ironfish_uart
+  src/ironfish_uart.cpp)
+target_link_libraries(ironfish_uart
+  serial
+  ${catkin_LIBRARIES})
+```
+
+### Catkin message
+```
+Scanning dependencies of target ironfish_uart
+[ 89%] Building CXX object IronFish/ironfish_uart/CMakeFiles/ironfish.dir/src/ironfish_uart.cpp.o
+[ 91%] Linking CXX shared library /home/shannon/Documents/ros-kinetic/devel/lib/libironfish_uart.so
+[ 91%] Built target ironfish_uart
+Scanning dependencies of target ironfish
+```
+```
+~/Documents/ros-kinetic/build/IronFish/ironfish_uart/CMakeFiles/ironfish_uart.dir/src/ironfish_uart.cpp.o*
+~/Documents/ros-kinetic/devel/lib/libironfish_uart.so*
+```

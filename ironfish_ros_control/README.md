@@ -49,10 +49,8 @@ target_link_libraries(ironfish_ros_control
 
 ```
 
-### After catkin_make
+### Catkin message
 ```
-[ 91%] Linking CXX shared library /home/shannon/Documents/ros-kinetic/devel/lib/libironfish_uart.so
-[ 91%] Built target ironfish_uart
 Scanning dependencies of target ironfish
 [ 92%] Building CXX object IronFish/ironfish_ros_control/CMakeFiles/ironfish.dir/src/hardware.cpp.o
 [ 94%] Building CXX object IronFish/ironfish_ros_control/CMakeFiles/ironfish.dir/src/transmission.cpp.o
@@ -63,4 +61,13 @@ Scanning dependencies of target ironfish_ros_control
 [ 98%] Building CXX object IronFish/ironfish_ros_control/CMakeFiles/ironfish_ros_control.dir/src/ironfish_ros_control.cpp.o
 [100%] Linking CXX executable /home/shannon/Documents/ros-kinetic/devel/lib/ironfish_ros_control/ironfish_ros_control
 [100%] Built target ironfish_ros_control
+```
+```
+~/Documents/ros-kinetic/build/IronFish/ironfish_ros_control/CMakeFiles/ironfish_ros_control.dir/src/ironfish_ros_control.cpp.o*
+~/Documents/ros-kinetic/devel/lib/ironfish_ros_control/ironfish_ros_control*
+```
+```
+~/Documents/ros-kinetic/build/IronFish/ironfish_ros_control/CMakeFiles/ironfish.dir/src/
+hardware.cpp.o  hardware_transmission_interface.cpp.o  transmission.cpp.o
+~/Documents/ros-kinetic/devel/lib/libironfish.so*
 ```
