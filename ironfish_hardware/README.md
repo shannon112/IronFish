@@ -1,8 +1,6 @@
 # IronFish
 ### Appearence
-<img src="https://github.com/shannon112/IronFish/blob/master/ironfish_hardware/IMG_0543.png" width="250">
-<img src="https://github.com/shannon112/IronFish/blob/master/ironfish_hardware/IMG_0544.png" width="250">
-<img src="https://github.com/shannon112/IronFish/blob/master/ironfish_hardware/v2.png" width="250">
+<img src="https://github.com/shannon112/IronFish/blob/master/ironfish_hardware/IMG_0543.png" width="250"> <img src="https://github.com/shannon112/IronFish/blob/master/ironfish_hardware/IMG_0544.png" width="250"> <img src="https://github.com/shannon112/IronFish/blob/master/ironfish_hardware/v2.png" width="250">
 
 ### Materials
 |#| Item                               | Spec name                  | Ref / Remarks   |
@@ -20,8 +18,8 @@
 |K| USB3.0 HUB * 1     | Any~     | At least having 4 ports     |
 |L| MiniUSB wire * N     | Any~     | Connect to Hokuyo     |
 |M| MicroUSB wire * N     | Any~     | Connect to Camera      |
-|N| Wire * N     | Intel Realsense D435     | -     |
-|O| Terminal Socket * 1 | Intel Realsense D435     | -     |
+|N| Wire * N     | Any~     | -     |
+|O| Terminal Socket * 1 | Any~     | -     |
 |P| RS232 adapter * 1 | null modem DCE-DCE   | -     |
 |Q| Switch * 1 | any   | -     |
 |R| RGB-D Camera * 1     | Microsoft Kinect 1414  |  https://www.evernote.com/shard/s315/sh/66dd6958-0004-4f01-adf3-c85db65ba50b/0391136fb9a61bebaf4f77235412f5ee   |
