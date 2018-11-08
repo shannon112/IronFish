@@ -1,3 +1,7 @@
+# ironfish_ros_control
+This package is for
+A main launch file is in it.
+
 ### Dependencies
 ```
   <buildtool_depend>catkin</buildtool_depend>
@@ -5,10 +9,44 @@
   <build_depend>controller_manager</build_depend>
   <build_depend>hardware_interface</build_depend>
   <build_depend>ironfish_uart</build_depend>
+
   <run_depend>roscpp</run_depend>
   <run_depend>controller_manager</run_depend>
   <run_depend>hardware_interface</run_depend>
   <run_depend>ironfish_uart</run_depend>
+```
+```
+catkin_package(
+  INCLUDE_DIRS include
+  CATKIN_DEPENDS roscpp controller_manager hardware_interface 
+)
+```
+
+### Builts
+A library calls ironfish.
+```
+add_library(ironfish
+  src/hardware.cpp
+  src/transmission.cpp
+  src/hardware_transmission_interface.cpp
+)
+target_link_libraries(ironfish
+  ${catkin_LIBRARIES}
+  ${Boost_LIBRARIES}
+)
+```
+
+A executable file calls ironfish_ros_control.(Would be used by launch file)
+```
+add_executable(ironfish_ros_control
+  src/ironfish_ros_control.cpp
+)
+target_link_libraries(ironfish_ros_control
+  ironfish
+  ${catkin_LIBRARIES}
+  ${Boost_LIBRARIES}
+)
+
 ```
 
 ### After catkin_make

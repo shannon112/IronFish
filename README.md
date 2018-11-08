@@ -1,9 +1,9 @@
 # Ironfish
 <img src="https://github.com/shannon112/IronFish/blob/master/ironfish.png" width="350">
 
-Ironfish is a simple mobile robot that you can simply build it by yourself!  
-* Sensor: Kinect, RealSense, Hokuyo lazer
+Ironfish is a simple ROS mobile robot that you can simply build it by yourself!  
 * Processor: Your laptop
+* Sensor: Kinect, RealSense, Hokuyo lazer
 * Actuator: Two DC motor with two wheels, and one guide wheel.
  
 
@@ -33,14 +33,5 @@ There are 4 pkg 1 launch file (4 nodes would be launched)
       <!--param name="default_vx_min" value="-0.25"/-->
     </node>
   </group>
-
-
-dependence:
-_uart: serial 
-https://github.com/shannon112/libserial-0.6.0rc2.git
-_uart: boost
-built-in or
-sudo apt-get install libboost-all-dev
-
 
 
