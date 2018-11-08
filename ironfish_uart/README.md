@@ -32,7 +32,7 @@ sudo apt-get install libboost-all-dev
 ```
 
 ### Builts
-A "ironfish_uart" library .
+A library "ironfish_uart".
 ```
 add_library(ironfish_uart
   src/ironfish_uart.cpp)
