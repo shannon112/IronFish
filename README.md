@@ -1,3 +1,13 @@
+# Ironfish
+<img src="https://github.com/shannon112/IronFish/blob/master/ironfish.png" width="350">
+
+Ironfish is a simple mobile robot that you can simply build it by yourself!  
+* Sensor: Kinect, RealSense, Hokuyo lazer
+* Processor: Your laptop
+* Actuator: Two DC motor with two wheels, and one guide wheel.
+ 
+
+### Introduction
 There are 4 pkg 1 launch file (4 nodes would be launched)
 
 
