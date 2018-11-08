@@ -7,14 +7,14 @@ Ironfish is a simple ROS mobile robot that you can simply build it by yourself!
 * Actuator: Two DC motor with two wheels, and one guide wheel.
  
 
-### Guidance
+## Guidance
 There are 3 pkg 1 doc folder in Ironfish repo. 
 * ironfish_description: This package is for <usage><meaning>
 * ironfish_ros_control: This package is for <usage><meaning>
 * ironfish_uart: This package is for <usage><meaning>
 * ironfish_hardware: This folder is for <usage><meaning>
 
-### Usage
+## Usage
 In real world
 ```
 roslaunch rsc_car_ros_control rsc_car_ros_control.launch
