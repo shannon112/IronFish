@@ -1,8 +1,8 @@
 # IronFish
 Simple ROS car  
-<img src="https://github.com/shannon112/IronFish/blob/master/ironfish_hardware/IMG_0543.png" width="300">
-<img src="https://github.com/shannon112/IronFish/blob/master/ironfish_hardware/IMG_0544.png" width="300">
-
+<img src="https://github.com/shannon112/IronFish/blob/master/ironfish_hardware/IMG_0543.png" width="250">
+<img src="https://github.com/shannon112/IronFish/blob/master/ironfish_hardware/IMG_0544.png" width="250">
+<img src="https://github.com/shannon112/IronFish/blob/master/ironfish_hardware/v2.png" width="250">
 
 ### Materials
 |#| Item                               | Spec name                  | Ref / Remarks   |
