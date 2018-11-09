@@ -1,8 +1,8 @@
-# IronFish
-### Appearence
+# ironfish_hardware
+## Appearence
 <img src="https://github.com/shannon112/IronFish/blob/master/ironfish_hardware/IMG_0543.png" width="250"> <img src="https://github.com/shannon112/IronFish/blob/master/ironfish_hardware/IMG_0544.png" width="250"> <img src="https://github.com/shannon112/IronFish/blob/master/ironfish_hardware/v2.png" width="250">
 
-### Materials
+## Materials
 |#| Item                               | Spec name                  | Ref / Remarks   |
 |-| ---------------------------------- | -------------------------  | -------- |
 |A| Laptop * 1            | YOURS     | Ubunut16.04 & ROS kinetic environment is recommended  |
@@ -25,10 +25,10 @@
 |R| RGB-D Camera * 1     | Microsoft Kinect 1414  |  https://www.evernote.com/shard/s315/sh/66dd6958-0004-4f01-adf3-c85db65ba50b/0391136fb9a61bebaf4f77235412f5ee   |
 |S| USB multimeter * 1 | aibo PMT031 | - 
 
-### Wiring
+## Wiring
 <img src="https://github.com/shannon112/IronFish/blob/master/ironfish_hardware/wiring.png" width="600">
 
-### Simple test of communicating with controller
+## Simple test of communicating with controller
 We need the tool "minicom" to directly send ascii data to controller
 ```
 sudo apt-get install minicom
