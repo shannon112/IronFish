@@ -26,4 +26,4 @@
 |S| USB multimeter * 1 | aibo PMT031 | - 
 
 ### Wiring
-<img src="https://github.com/shannon112/IronFish/blob/master/ironfish_hardware/IMG_0545.png" width="600">
+<img src="https://github.com/shannon112/IronFish/blob/master/ironfish_hardware/wiring.png" width="600">
