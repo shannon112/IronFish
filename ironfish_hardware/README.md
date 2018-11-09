@@ -1,4 +1,6 @@
 # ironfish_hardware
+This folder is for the robot hardware info.
+
 ## Appearence
 <img src="https://github.com/shannon112/IronFish/blob/master/ironfish_hardware/IMG_0543.png" width="250"> <img src="https://github.com/shannon112/IronFish/blob/master/ironfish_hardware/IMG_0544.png" width="250"> <img src="https://github.com/shannon112/IronFish/blob/master/ironfish_hardware/v2.png" width="250">
 
@@ -38,10 +40,8 @@ Set up the protocol parameters (do this only at the first time):
 sudo minicom -s
 (If you have set up the parameters, just type "minicom" in terminal. The minicom will be launched.)
 ```
-<img src="https://github.com/shannon112/IronFish/blob/master/ironfish_hardware/minicom_settings.png" width="600">
-
-1. Choose "**Serial port setup**", and the settings should be as following:
-2. Press Enter and then choose "**Save setup as dfl**"
+1. Choose "**Serial port setup**", and the settings should be as the picture showed below.
+2. Press Enter to finish and then choose "**Save setup as dfl**"
 3. Choose "**Exit**", and the you will be in minicom.
 4. Press "**Ctrl + a**". Next, release and press "**z**",  and then press "**e**" to enable echo on the screen.
 5. You can send commands now.
@@ -50,3 +50,5 @@ en (Enable motors. The motors should output torque.)
 1v100 (The motor of node 1 will move in 100rpm.)
 v0 (Stop all the motors)
 ```
+
+<img src="https://github.com/shannon112/IronFish/blob/master/ironfish_hardware/minicom_settings.png" width="600">
