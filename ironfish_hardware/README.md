@@ -31,7 +31,12 @@ This folder is for the robot hardware info.
 <img src="https://github.com/shannon112/IronFish/blob/master/ironfish_hardware/wiring.png" width="600">
 
 ## Simple test of communicating with controller
-We need the tool "minicom" to directly send ascii data to controller
+Add group to get the authorization of hardware connected on your linux machine.  
+(You must log out and then log in again for this to take effect. This avoids issues for ttyUSB# or ttyACM# permissions.)
+```
+sudo usermod -a -G dialout <username>
+```
+Then, we need the tool "minicom" to directly send ascii data to controller
 ```
 sudo apt-get install minicom
 ```
