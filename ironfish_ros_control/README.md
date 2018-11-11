@@ -1,6 +1,7 @@
 # ironfish_ros_control
 This package is for \<usage\>\<meaning\>  
 This package is built as a library package but also a executable package.(one launch file and one executable file)  
+* /config is param which could be import(rosparam) by ironfish_ros_control.launch and ironfish_gazebo.launch
 
 ### Dependencies
 ```
