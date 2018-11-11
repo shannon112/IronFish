@@ -1,6 +1,6 @@
 # ironfish_ros_control
-This package is for
-A main launch file is in it.
+This package is for \<usage\>\<meaning\>  
+This package is built as a library package but also a executable package.(one launch file and one executable file)  
 
 ### Dependencies
 ```
@@ -23,7 +23,7 @@ catkin_package(
 ```
 
 ### Builts
-A library calls ironfish.
+A library "ironfish".
 ```
 add_library(ironfish
   src/hardware.cpp
@@ -36,7 +36,7 @@ target_link_libraries(ironfish
 )
 ```
 
-A executable file calls ironfish_ros_control.(Would be used by launch file)
+A executable file "ironfish_ros_control".(Would be used by launch file)
 ```
 add_executable(ironfish_ros_control
   src/ironfish_ros_control.cpp
@@ -50,6 +50,7 @@ target_link_libraries(ironfish_ros_control
 ```
 
 ### Catkin message
+catkin_make messages
 ```
 Scanning dependencies of target ironfish
 [ 92%] Building CXX object IronFish/ironfish_ros_control/CMakeFiles/ironfish.dir/src/hardware.cpp.o
@@ -62,10 +63,12 @@ Scanning dependencies of target ironfish_ros_control
 [100%] Linking CXX executable /home/shannon/Documents/ros-kinetic/devel/lib/ironfish_ros_control/ironfish_ros_control
 [100%] Built target ironfish_ros_control
 ```
+location of products (ironfish_ros_control)
 ```
 ~/Documents/ros-kinetic/build/IronFish/ironfish_ros_control/CMakeFiles/ironfish_ros_control.dir/src/ironfish_ros_control.cpp.o*
 ~/Documents/ros-kinetic/devel/lib/ironfish_ros_control/ironfish_ros_control*
 ```
+location of products (ironfish)
 ```
 ~/Documents/ros-kinetic/build/IronFish/ironfish_ros_control/CMakeFiles/ironfish.dir/src/
 hardware.cpp.o  hardware_transmission_interface.cpp.o  transmission.cpp.o

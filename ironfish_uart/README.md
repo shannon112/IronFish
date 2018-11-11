@@ -1,6 +1,6 @@
 # ironfish_uart
-This package is for
-Built as a library package. There is no launch files or nodes in it.
+This package is for \<usage\>\<meaning\>  
+This package is built as a library package. There is no launch files or ros nodes in it.  
 
 ### Dependencies
 ```
@@ -21,18 +21,18 @@ catkin_package(
   DEPENDS serial Boost
 )
 ```
-Install serial (C++ library)
+* Install serial (C++ library)
 ```
 https://github.com/shannon112/libserial-0.6.0rc2.git
 ```
-Install boost (C++ library)
-Already built-in or
+* Install boost (C++ library)
 ```
+Already built-in or
 sudo apt-get install libboost-all-dev
 ```
 
 ### Builts
-A library calls ironfish_uart.
+A library "ironfish_uart".
 ```
 add_library(ironfish_uart
   src/ironfish_uart.cpp)
@@ -42,6 +42,7 @@ target_link_libraries(ironfish_uart
 ```
 
 ### Catkin message
+catkin_make messages
 ```
 Scanning dependencies of target ironfish_uart
 [ 89%] Building CXX object IronFish/ironfish_uart/CMakeFiles/ironfish.dir/src/ironfish_uart.cpp.o
@@ -49,6 +50,7 @@ Scanning dependencies of target ironfish_uart
 [ 91%] Built target ironfish_uart
 Scanning dependencies of target ironfish
 ```
+location of products
 ```
 ~/Documents/ros-kinetic/build/IronFish/ironfish_uart/CMakeFiles/ironfish_uart.dir/src/ironfish_uart.cpp.o*
 ~/Documents/ros-kinetic/devel/lib/libironfish_uart.so*
