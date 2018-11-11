@@ -20,27 +20,15 @@ In real world
 roslaunch rsc_car_ros_control rsc_car_ros_control.launch
 ```
 4 nodes would be launched
+>>>>>>> 216cbf84dce7589cf9e9aec42aed2ac579a79f9b
 ```
-  <!--Spawn Controller-->
-  <node name="diff_controller_spawner" pkg="controller_manager" type="spawner"
-    args="penguin_joint_state_controller
-          penguin_diff_drive_controller"/>
-
-  <!--Main control node-->
-  <node name="penguin_ros_control" pkg="penguin_ros_control" type="penguin_ros_control"
-    output="log" respawn="true" respawn_delay="3"/>
-
-  <!--Publish robot state-->
-  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
-    respawn="false" output="screen">
-  </node>
-
-  <!--Gui steering console (Optional)-->
-  <group if="$(arg rqt_steering)">
-    <node name="rqt_robot_steering" pkg="rqt_robot_steering" type="rqt_robot_steering">
-      <param name="default_topic" value="penguin_diff_drive_controller/cmd_vel"/>
-      <!--param name="default_vx_max" value="0.3"/-->
-      <!--param name="default_vx_min" value="-0.25"/-->
-    </node>
-  </group>
+roslaunch ironfish_description ironfish_gazebo.launch
+```
+Launch rviz
+```
+roslaunch ironfish_description ironfish_rviz.launch
+```
+Launch control node
+```
+roslaunch ironfish_ros_control ironfish_ros_control.launch
 ```
