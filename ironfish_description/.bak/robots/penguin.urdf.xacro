@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<robot name="penguin" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <!-- base and wheel for Penguin -->
+  <xacro:include filename="$(find penguin_description)/urdf/base/base.urdf.xacro"/>
+  <!-- colors for Penguin -->
+  <xacro:include filename="$(find penguin_description)/urdf/materials.xacro"/>
+  <!-- gazebo plugin -->
+  <xacro:include filename="$(find penguin_description)/gazebo/gazebo.urdf.xacro"/>
+
+  <!-- Use the macros to define Penguin -->
+  <xacro:penguin_base/>
+</robot>

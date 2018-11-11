@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <!-- base -->
+  <xacro:macro name="penguin_base_gazebo">
+    <gazebo reference="base_link">
+      <material>Gazebo/White</material>
+    </gazebo>
+  </xacro:macro>
+  
+  <!-- right and left wheels -->
+  <xacro:macro name="penguin_rl_wheel_gazebo">
+    <gazebo reference="right_wheel">
+      <material>Gazebo/Black</material>
+      <mu1 value="100.0"/>
+      <mu2 value="100.0"/>
+      <kp value="1000000.0"/>
+      <kd value="1.0"/>
+      <fdir1 falue="1 0 0"/>
+    </gazebo>
+    
+    <gazebo reference="left_wheel">
+      <material>Gazebo/Black</material>
+      <mu1 value="100.0"/>
+      <mu2 value="100.0"/>
+      <kp value="1000000.0" />
+      <kd value="1.0" />
+      <fdir1 falue="1 0 0"/>
+    </gazebo>
+  </xacro:macro>
+  
+  <!-- front and back wheels -->
+  <xacro:macro name="penguin_fb_wheel_gazebo">
+    <gazebo reference="front_wheel">
+      <material>Gazebo/Blue</material>
+      <mu1 value="0.0"/>
+      <mu2 value="0.0"/>
+      <kp value="1000000.0" />
+      <kd value="1.0" />
+      <fdir1 falue="1 0 0"/>
+    </gazebo>
+
+    <gazebo reference="back_wheel">
+      <material>Gazebo/Blue</material>
+      <mu1 value="0.0"/>
+      <mu2 value="0.0"/>
+      <kp value="1000000.0" />
+      <kd value="1.0" />
+      <fdir1 falue="1 0 0"/>
+    </gazebo>  
+  </xacro:macro>
+</robot>

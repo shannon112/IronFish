@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:include filename="$(find penguin_description)/urdf/sensors/asus_xtion_pro.gazebo.xacro"/>
+
+  <xacro:macro name="asus_xtion_pro" params="name parent">
+    <joint name="${name}_joint" type="fixed">
+      <origin xyz="${width + 0.07} 0 0.05 " rpy="0 0 0"/>
+      <parent link="${parent}"/>
+      <child link="${name}_link"/>
+    </joint>
+    
+    <link name="${name}_link">
+      <inertial>
+        <mass value="0.200" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <inertia ixx="5.8083e-4" ixy="0" ixz="0" iyy="3.0833e-5" iyz="0" izz="5.9083e-4" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://penguin_description/meshes/asus_camera/asus_camera_simple.dae"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="-0.02 0.003 0" rpy="0 0 0" />
+        <geometry>
+          <box size="0.035 0.185 0.025"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name="${name}_depth_joint" type="fixed">
+      <origin xyz="0.0 0.049 0.0" rpy="0 0 0" />
+      <parent link="${name}_link" />
+      <child link="${name}_depth_frame"/>
+    </joint>
+
+    <link name="${name}_depth_frame"/>
+
+    <joint name="${name}_depth_optical_joint" type="fixed">
+      <origin xyz="0 0 0" rpy="${-M_PI/2} 0.0 ${-M_PI/2}" />
+      <parent link="${name}_depth_frame" />
+      <child link="${name}_depth_optical_frame"/>
+    </joint>
+
+    <link name="${name}_depth_optical_frame"/>
+
+    <joint name="${name}_rgb_joint" type="fixed">
+      <origin xyz="0.0 0.022 0.0" rpy="0 0 0" />
+      <parent link="${name}_link" />
+      <child link="${name}_rgb_frame"/>
+    </joint>
+
+    <link name="${name}_rgb_frame"/>
+
+    <joint name="${name}_rgb_optical_joint" type="fixed">
+      <origin xyz="0 0 0" rpy="${-M_PI/2} 0.0 ${-M_PI/2}" />
+      <parent link="${name}_rgb_frame" />
+      <child link="${name}_rgb_optical_frame"/>
+    </joint>
+
+    <link name="${name}_rgb_optical_frame"/>
+
+    <!-- extensions -->
+    <xacro:asus_xtion_pro_gazebo name="${name}"/>
+  </xacro:macro>
+</robot>

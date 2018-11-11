@@ -1,0 +1,230 @@
+<robot
+  name="rsc_car">
+  <include filename="$(find rsc_car_description)/robots/rsc_car.gazebo"/>
+  <include filename="$(find rsc_car_description)/robots/rsc_car_materials.xacro"/>
+
+  <link name="base_footprint">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0 0 0" />
+      </geometry>
+    </visual>
+  </link>
+  <joint name="base_footprint_joint" type="fixed">
+    <origin xyz="0 0 0.1124430740677247" rpy="0 0 0" />
+    <child link="base_link" />
+    <parent link="base_footprint"/>
+  </joint>
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.0 0.0 0.0"
+        rpy="0 0 0" />
+      <mass
+        value="9.63917377366023" />
+      <inertia
+        ixx="0.237807421016149"
+        ixy="-0.000957490079651932"
+        ixz="-0.00857054226461183"
+        iyy="0.194019876806731"
+        iyz="-0.000346506035872763"
+        izz="0.23820634587875" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rsc_car_description/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="white">
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rsc_car_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="rwheel_link">
+    <inertial>
+      <origin
+        xyz="0.00135801594645624 0.172990242127593 -0.00176982148142078"
+        rpy="0 0 0" />
+      <mass
+        value="9.63917377366023" />
+      <inertia
+        ixx="0.232225456967381"
+        ixy="-0.000775082796697438"
+        ixz="-0.00633001483620334"
+        iyy="0.194019876806731"
+        iyz="-0.000660378939542891"
+        izz="0.243788309927519" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rsc_car_description/meshes/rwheel_link.STL" />
+      </geometry>
+      <material
+        name="black">
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rsc_car_description/meshes/rwheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rwheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.0600000000000008 -0.167044710646164 -0.0124430740677247"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="rwheel_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <transmission name="rwheel_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="rwheel_joint">
+      <hardwareInterface>VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="rwheel_motor">
+      <mechanicalReduction>43</mechanicalReduction>
+      <hardwareInterface>VelocityJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+  <link
+    name="lwheel_link">
+    <inertial>
+      <origin
+        xyz="-0.00222524026865972 -0.173009757872407 -0.000157420245397055"
+        rpy="0 0 0" />
+      <mass
+        value="9.63917377366023" />
+      <inertia
+        ixx="0.234451812464467"
+        ixy="-0.000123710415165173"
+        ixz="0.00780099033949849"
+        iyy="0.194019876806731"
+        iyz="0.00101071727931592"
+        izz="0.241561954430433" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rsc_car_description/meshes/lwheel_link.STL" />
+      </geometry>
+      <material
+        name="black">
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rsc_car_description/meshes/lwheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lwheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.0600000000000003 0.178955289353836 -0.0124430740677254"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="lwheel_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <transmission name="lwheel_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="lwheel_joint">
+      <hardwareInterface>VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="lwheel_motor">
+      <mechanicalReduction>43</mechanicalReduction>
+      <hardwareInterface>VelocityJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+  <link
+    name="hokuyo_link">
+    <inertial>
+      <origin
+        xyz="2.6021E-18 -1.1102E-16 -0.01"
+        rpy="0 0 0" />
+      <mass
+        value="0" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rsc_car_description/meshes/hokuyo_link.STL" />
+      </geometry>
+      <material
+        name="orange">
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rsc_car_description/meshes/hokuyo_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hokuyo_joint"
+    type="fixed">
+    <origin
+      xyz="0.104999999999999 0.00595528935383606 0.228556925932277"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="hokuyo_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>
