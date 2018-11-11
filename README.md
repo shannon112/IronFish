@@ -8,10 +8,14 @@ Ironfish is a simple ROS mobile robot that you can simply build it by yourself!
   
 ### Introduction
 There are 4 pkgs including 3 launch files  
-ironfish_hardware:  
-ironfish_ros_control:  
-ironfish_uart:  
-ironfish_description:  
+* ironfish_hardware:  
+This folder is for the robot hardware info. No code inside. Check it out at ironfish_hardware/README.md
+* ironfish_ros_control:  
+
+* ironfish_uart:  
+
+* ironfish_description:   
+This package is for ironfish gazebo/rviz ros launch files. Check it out at ironfish_description/README.md
   
 ### Quickly start
 Launch control node
