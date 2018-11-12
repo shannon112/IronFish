@@ -23,12 +23,17 @@ catkin_package(
 )
 ```
 * Install ros_control which including:   
-combined_robot_hw | combined_robot_hw_tests | controller_interface | controller_manager | controller_manager_msgs | controller_manager_tests | hardware_interface | joint_limits_interface | realtime_tools | transmission_interface
+combined_robot_hw | combined_robot_hw_tests | controller_interface | **controller_manager** | controller_manager_msgs | controller_manager_tests | **hardware_interface** | joint_limits_interface | realtime_tools | **transmission_interface**
 ```
-sudo apt-get install ros-kinetic-ros-control ros-kinetic-ros-controllers
+sudo apt-get install ros-kinetic-ros-control
+```
+* Install ros_controllers which including:   
+ackermann_steering_controller | **diff_drive_controller** | effort_controllers | force_torque_sensor_controller | forward_command_controller | gripper_action_controller | imu_sensor_controller | **joint_state_controller** | joint_trajectory_controller | position_controllers | rqt_joint_trajectory_controller | velocity_controllers
+```
+sudo apt-get install ros-kinetic-ros-controllers
 ```
 * Install rqt_robot_plugins which including:   
-rqt_moveit | rqt_nav_view | rqt_pose_view | rqt_robot_dashboard | rqt_robot_monitor | rqt_robot_steering | rqt_runtime_monitor | rqt_rviz | rqt_tf_tree
+rqt_moveit | rqt_nav_view | rqt_pose_view | rqt_robot_dashboard | rqt_robot_monitor | **rqt_robot_steering** | rqt_runtime_monitor | rqt_rviz | **rqt_tf_tree**
 ```
 sudo apt install ros-kinetic-rqt-robot-plugins
 ```
