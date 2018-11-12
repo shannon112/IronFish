@@ -23,7 +23,7 @@ catkin_package(
 ```
 * Install serial (C++ library)
 ```
-https://github.com/shannon112/libserial-0.6.0rc2.git
+See https://github.com/shannon112/libserial-0.6.0rc2.git README.md
 ```
 * Install boost (C++ library)
 ```
