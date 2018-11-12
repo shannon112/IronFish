@@ -18,9 +18,14 @@ This folder is for the robot hardware info. No code inside. Check it out at iron
 This package is for ironfish gazebo/rviz ros launch files. Check it out at ironfish_description/README.md
   
 ### Quickly start
-Launch control node
+Launch control node (with control panel)
 ```
 roslaunch ironfish_ros_control ironfish_ros_control.launch
+(roslaunch ironfish_ros_control ironfish_ros_control.launch rqt_steering:=1)
+```
+Launch control panel
+```
+rosrun rqt_robot_steering rqt_robot_steering
 ```
 Launch rviz
 ```
