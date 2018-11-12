@@ -6,7 +6,7 @@ Ironfish is a simple ROS mobile robot that you can simply build it by yourself! 
 * Sensor: Kinect, RealSense, Hokuyo lazer
 * Actuator: Two DC motor with two wheels, and one guide wheel.
   
-### Introduction 
+## Introduction 
 There are 4 pkgs including 3 launch files  
 * ironfish_hardware:  
 This folder is for the robot hardware info. No code inside. Check it out at ironfish_hardware/README.md
@@ -17,7 +17,7 @@ This folder is for the robot hardware info. No code inside. Check it out at iron
 * ironfish_description:   
 This package is for ironfish gazebo/rviz ros launch files. Check it out at ironfish_description/README.md
   
-### Quickly start
+## Quickly start
 Launch control node (with gui control panel)
 ```
 roslaunch ironfish_ros_control ironfish_ros_control.launch
@@ -35,3 +35,9 @@ Launch gazebo
 ```
 roslaunch ironfish_description ironfish_gazebo.launch
 ```
+Analyzing
+```
+rosrun rqt_graph rqt_graph
+```
+<img src="https://github.com/shannon112/IronFish/blob/master/rqt_graph(debug off).png" width="800">
+<img src="https://github.com/shannon112/IronFish/blob/master/rqt_graph.png" width="800">
