@@ -1,0 +1,8 @@
+prefix=/opt/ros/kinetic
+
+Name: ironfish_uart
+Description: Description of ironfish_uart
+Version: 0.0.0
+Cflags: -I/opt/ros/kinetic/include
+Libs: -L/opt/ros/kinetic/lib -lironfish_uart
+Requires: roscpp

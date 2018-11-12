@@ -1,0 +1,35 @@
+<launch>
+  <arg name="rqt_steering" default="false"/>
+  <arg name="model" default="$(find ironfish_description)/robots/ironfish.urdf"/>
+  <arg name="diffconfig" default="$(find ironfish_ros_control)/config/ironfish_ros_control_real.yaml"/>
+
+  <param name="robot_description" command="$(find xacro)/xacro.py $(arg model)" />
+  <rosparam command="load" file="$(arg diffconfig)"/>
+
+  <!--Spawn Controller-->
+  <node name="diff_controller_spawner" pkg="controller_manager" type="spawner"
+    args="ironfish_joint_state_controller
+          ironfish_diff_drive_controller"/>
+
+  <!--Main control node-->
+  <node name="ironfish_ros_control" pkg="ironfish_ros_control" type="ironfish_ros_control"
+    output="log" respawn="true" respawn_delay="3"/>
+
+  <!--Publish robot state-->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+    respawn="false" output="screen">
+  </node>
+
+  <!--Gui steering console (Optional)-->
+  <group if="$(arg rqt_steering)">
+    <node name="rqt_robot_steering" pkg="rqt_robot_steering" type="rqt_robot_steering">
+      <param name="default_topic" value="ironfish_diff_drive_controller/cmd_vel"/>
+      <!--param name="default_vx_max" value="0.3"/-->
+      <!--param name="default_vx_min" value="-0.25"/-->
+    </node>
+  </group>
+
+  <!--Rviz-->
+  <!--node name="rviz" pkg="rviz" type="rviz" required="true"
+    args="-d $(find m700_ros_control)/rviz/m700.rviz" /-->
+</launch>
