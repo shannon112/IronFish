@@ -18,7 +18,6 @@ catkin_package(
   INCLUDE_DIRS include
   LIBRARIES ironfish_uart
   CATKIN_DEPENDS roscpp
-  DEPENDS serial Boost
 )
 ```
 * Install serial (C++ library)
