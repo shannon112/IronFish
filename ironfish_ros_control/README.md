@@ -22,6 +22,11 @@ catkin_package(
   CATKIN_DEPENDS roscpp controller_manager hardware_interface 
 )
 ```
+You need to install ros_control which including:   
+combined_robot_hw | combined_robot_hw_tests | controller_interface | controller_manager | controller_manager_msgs | controller_manager_tests | hardware_interface | joint_limits_interface | realtime_tools | transmission_interface
+```
+sudo apt-get install ros-kinetic-ros-control ros-kinetic-ros-controllers
+```
 
 ### Builts
 A library "ironfish".
