@@ -11,6 +11,9 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   controller_manager
   hardware_interface
+  transmission_interface
+  diff_drive_controller
+  joint_state_controller
   ironfish_uart 
 )
 ## same as we mentioned in package.xml
@@ -119,7 +122,14 @@ endif()
 catkin_package(
   INCLUDE_DIRS include
 #  LIBRARIES ironfish_ros_control
-  CATKIN_DEPENDS roscpp controller_manager hardware_interface 
+  CATKIN_DEPENDS roscpp
+  controller_manager
+  hardware_interface
+  transmission_interface
+  diff_drive_controller
+  joint_state_controller
+  ironfish_uart 
+
 #  DEPENDS system_lib
 )
 

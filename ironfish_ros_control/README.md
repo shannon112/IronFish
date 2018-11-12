@@ -10,17 +10,31 @@ This package is built as a library package but also a executable package.(one la
   <build_depend>controller_manager</build_depend>
   <build_depend>hardware_interface</build_depend>
   <build_depend>ironfish_uart</build_depend>
+  <build_depend>joint_state_controller</build_depend>
+  <build_depend>diff_drive_controller</build_depend>
+  <build_depend>transmission_interface</build_depend>
 
   <run_depend>roscpp</run_depend>
   <run_depend>controller_manager</run_depend>
   <run_depend>hardware_interface</run_depend>
   <run_depend>ironfish_uart</run_depend>
+  <run_depend>transmission_interface</run_depend>
+  <run_depend>diff_drive_controller</run_depend>
+  <run_depend>joint_state_controller</run_depend>
+
 ```
 ```
 catkin_package(
   INCLUDE_DIRS include
-  CATKIN_DEPENDS roscpp controller_manager hardware_interface 
+  CATKIN_DEPENDS roscpp
+  controller_manager
+  hardware_interface
+  transmission_interface
+  diff_drive_controller
+  joint_state_controller
+  ironfish_uart 
 )
+
 ```
 * Install ros_control which including:   
 combined_robot_hw | combined_robot_hw_tests | controller_interface | **controller_manager** | controller_manager_msgs | controller_manager_tests | **hardware_interface** | joint_limits_interface | realtime_tools | **transmission_interface**
