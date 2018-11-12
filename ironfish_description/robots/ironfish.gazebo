@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<robot name="rsc_car">
+<robot name="ironfish">
 
   <!-- Gazebo plugin for ROS Control -->
   <gazebo>
@@ -11,7 +11,7 @@
   <gazebo reference="base_link">
     <material>Gazebo/White</material>
   </gazebo>
-  
+
   <gazebo reference="rwheel_link">
     <material>Gazebo/Black</material>
     <mu1 value="100.0"/>
@@ -31,7 +31,7 @@
     <maxVel  value="100.0" />
     <minDepth  value="0.0" />
   </gazebo>
- 
+
   <gazebo reference="hokuyo_link">
      <material>Gazebo/Orange</material>
   </gazebo>

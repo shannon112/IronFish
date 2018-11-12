@@ -1,7 +1,7 @@
 <robot
-  name="rsc_car">
-  <include filename="$(find rsc_car_description)/robots/rsc_car.gazebo"/>
-  <include filename="$(find rsc_car_description)/robots/rsc_car_materials.xacro"/>
+  name="ironfish">
+  <include filename="$(find ironfish_description)/robots/ironfish.gazebo"/>
+  <include filename="$(find ironfish_description)/robots/ironfish_materials.xacro"/>
 
   <link name="base_footprint">
     <visual>
@@ -38,7 +38,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rsc_car_description/meshes/base_link.STL" />
+          filename="package://ironfish_description/meshes/base_link.STL" />
       </geometry>
       <material
         name="white">
@@ -50,7 +50,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rsc_car_description/meshes/base_link.STL" />
+          filename="package://ironfish_description/meshes/base_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -76,7 +76,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rsc_car_description/meshes/rwheel_link.STL" />
+          filename="package://ironfish_description/meshes/rwheel_link.STL" />
       </geometry>
       <material
         name="black">
@@ -88,7 +88,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rsc_car_description/meshes/rwheel_link.STL" />
+          filename="package://ironfish_description/meshes/rwheel_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -137,7 +137,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rsc_car_description/meshes/lwheel_link.STL" />
+          filename="package://ironfish_description/meshes/lwheel_link.STL" />
       </geometry>
       <material
         name="black">
@@ -149,7 +149,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rsc_car_description/meshes/lwheel_link.STL" />
+          filename="package://ironfish_description/meshes/lwheel_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -198,7 +198,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rsc_car_description/meshes/hokuyo_link.STL" />
+          filename="package://ironfish_description/meshes/hokuyo_link.STL" />
       </geometry>
       <material
         name="orange">
@@ -210,7 +210,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://rsc_car_description/meshes/hokuyo_link.STL" />
+          filename="package://ironfish_description/meshes/hokuyo_link.STL" />
       </geometry>
     </collision>
   </link>
