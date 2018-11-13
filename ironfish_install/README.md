@@ -1,5 +1,10 @@
 # ironfish_install
-Put those files to your /opt/ros/kinetic/ workspace  
+Put those files to your /opt/ros/kinetic/ workspace then  
+```
+sudo ldconfig
+source /opt/ros/kinetic/setup.bash
+source <YOUR_PATH_TO>/devel/setup.bash
+```
 Then, you can use IronFish without src code!
 
 ## Usage
