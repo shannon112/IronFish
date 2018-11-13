@@ -31,6 +31,10 @@ This folder is for the robot hardware info.
 <img src="https://github.com/shannon112/IronFish/blob/master/ironfish_hardware/wiring.png" width="600">
 
 ## Simple test of communicating with controller
+Plugin wire's rs232 side to controller and usb side to your laptop. See if you can get a message of connecting new plugin device to ttyUSB0. If you do not see it, you may need to install the driver of that rs232-USB wire.
+```
+dmseg
+```
 Add group to get the authorization of hardware connected on your linux machine.  
 (You must log out and then log in again for this to take effect. This avoids issues for ttyUSB# or ttyACM# permissions.)
 ```
