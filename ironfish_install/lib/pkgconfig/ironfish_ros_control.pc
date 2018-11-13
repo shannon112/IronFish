@@ -1,8 +1,0 @@
-prefix=/opt/ros/kinetic
-
-Name: ironfish_ros_control
-Description: Description of ironfish_ros_control
-Version: 0.0.0
-Cflags: -I/opt/ros/kinetic/include
-Libs: -L/opt/ros/kinetic/lib 
-Requires: roscpp controller_manager hardware_interface transmission_interface diff_drive_controller joint_state_controller ironfish_uart

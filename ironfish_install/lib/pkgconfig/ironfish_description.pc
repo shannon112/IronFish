@@ -1,8 +1,0 @@
-prefix=/opt/ros/kinetic
-
-Name: ironfish_description
-Description: Description of ironfish_description
-Version: 0.0.0
-Cflags: 
-Libs: -L/opt/ros/kinetic/lib 
-Requires: 
