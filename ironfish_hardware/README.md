@@ -2,7 +2,7 @@
 This folder is for the robot hardware info.
 
 ## Appearence
-<img src="https://github.com/shannon112/IronFish/blob/master/ironfish_hardware/IMG_0543.png" width="200"> <img src="https://github.com/shannon112/IronFish/blob/master/ironfish_hardware/IMG_0544.png" width="200"> <img src="https://github.com/shannon112/IronFish/blob/master/ironfish_hardware/v3-1.JPG" width="200"><img src="https://github.com/shannon112/IronFish/blob/master/ironfish_hardware/v3-2.JPG" width="200">
+<img src="https://github.com/shannon112/IronFish/blob/master/ironfish_hardware/IMG_0543.png" width="200"> <img src="https://github.com/shannon112/IronFish/blob/master/ironfish_hardware/IMG_0544.png" width="200"> <img src="https://github.com/shannon112/IronFish/blob/master/ironfish_hardware/v3-1.JPG" width="200"> <img src="https://github.com/shannon112/IronFish/blob/master/ironfish_hardware/v3-2.JPG" width="200">
 
 ## Materials
 |#| Item                               | Spec name                  | Ref / Remarks   |
@@ -30,7 +30,7 @@ This folder is for the robot hardware info.
 |U| Voltmeter * 1 | - | https://drive.google.com/file/d/1ynRALMMktycoePIaTkB1DrEn-dkggC0r/view?usp=sharing 
 
 
-## Wiring
+## Wiring v3
 <img src="https://github.com/shannon112/IronFish/blob/master/ironfish_hardware/wiring.png" width="600">
 
 ## Simple test of communicating with controller
