@@ -28,9 +28,9 @@ There is nothing be built.
 No
 
 ### trouble shooting
-if you got the msg below:
-[WARN]Controller spawner couldn’t find the expected controller_manager ros interface
-you definitely have not installed gazebo-ros-control yet.
+if you got the msg below:  
+[WARN]Controller spawner couldn’t find the expected controller_manager ros interface  
+you definitely have not installed gazebo-ros-control yet.  
 ```
 sudo apt install ros-kinetic-gazebo-ros-control
 ```
