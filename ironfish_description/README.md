@@ -1,8 +1,27 @@
 # ironfish_description
 This package is for ironfish gazebo/rviz ros launch files.
-* rviz/gazebo launch files at /launch
-* rviz config file at rviz/ironfish_rviz.rviz
-* gazebo world at world/ironfish_room.world
+
+### Structure
+├── CMakeLists.txt
+├── launch                      //It contains launch files
+│   ├── ironfish_gazebo.launch   //It would open rviz, rqt, gazebo at once
+│   └── ironfish_rviz.launch
+├── meshes                      //It contains solidwork robot model component
+│   ├── base_link.STL
+│   ├── hokuyo_link.STL
+│   ├── lwheel_link.STL
+│   └── rwheel_link.STL
+├── package.xml
+├── README.md
+├── robots
+│   ├── ironfish.gazebo
+│   ├── ironfish_materials.xacro
+│   └── ironfish.urdf
+├── rviz                      //It contains rviz config file
+│   └── ironfish_rviz.rviz
+└── world                     //It contains gazebo world
+    └── ironfish_room.world
+
 * gazebo robot model at robot/
 * solidwork 3d model at meshes/
 
