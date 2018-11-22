@@ -2,6 +2,7 @@
 This package is for ironfish gazebo/rviz ros launch files.
 
 ### Structure
+```
 ├── CMakeLists.txt
 ├── launch                      //It contains launch files
 │   ├── ironfish_gazebo.launch   //It would open rviz, rqt, gazebo at once
@@ -13,7 +14,7 @@ This package is for ironfish gazebo/rviz ros launch files.
 │   └── rwheel_link.STL
 ├── package.xml
 ├── README.md
-├── robots
+├── robots                  //* gazebo robot model at robot/
 │   ├── ironfish.gazebo
 │   ├── ironfish_materials.xacro
 │   └── ironfish.urdf
@@ -21,9 +22,7 @@ This package is for ironfish gazebo/rviz ros launch files.
 │   └── ironfish_rviz.rviz
 └── world                     //It contains gazebo world
     └── ironfish_room.world
-
-* gazebo robot model at robot/
-* solidwork 3d model at meshes/
+```
 
 ### Dependencies
 ```
@@ -47,9 +46,9 @@ There is nothing be built.
 No
 
 ### trouble shooting
-if you got the msg below:  
-[WARN]Controller spawner couldn’t find the expected controller_manager ros interface  
-you definitely have not installed gazebo-ros-control yet.  
+if you got the msg below:
+[WARN]Controller spawner couldn’t find the expected controller_manager ros interface
+you definitely have not installed gazebo-ros-control yet.
 ```
 sudo apt install ros-kinetic-gazebo-ros-control
 ```
