@@ -7,7 +7,7 @@ project(ironfish_description)
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
-find_package(catkin REQUIRED gazebo-ros-control)
+find_package(catkin REQUIRED gazebo_ros_control)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -101,7 +101,7 @@ find_package(catkin REQUIRED gazebo-ros-control)
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES rsc_car_description
-  CATKIN_DEPENDS gazebo-ros-control
+  CATKIN_DEPENDS gazebo_ros_control
 #  DEPENDS system_lib
 )
 
