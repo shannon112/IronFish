@@ -2,7 +2,7 @@
   <arg name="rqt_steering" default="true"/>
   <arg name="rviz" default="true"/>
   <arg name="model" default="$(find ironfish_description)/robots/ironfish.urdf"/>
-  <arg name="world_name" default="$(find ironfish_description)/world/playground.world"/>
+  <arg name="world_name" default="$(find ironfish_description)/world/empty.world"/>
   <arg name="rvizconfig" default="$(find ironfish_description)/rviz/ironfish.rviz" />
   <arg name="diffconfig" default="$(find ironfish_ros_control)/config/ironfish_ros_control_sim.yaml" />
   <arg name="x" default="0"/>
@@ -13,14 +13,14 @@
   <arg name="Y" default="0"/>
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" default="$(arg world_name)"/>
+    <!--arg name="world_name" default="$(arg world_name)"/-->
   </include>
 
   <param name="robot_description" command="python $(find xacro)/xacro.py $(arg model)" />
   <rosparam command="load" file="$(arg diffconfig)"/>
 
   <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model"
-    args="-x $(arg x) -y $(arg y) -z $(arg z) -R $(arg R) -P $(arg P) -Y $(arg Y) -unpause -urdf -model iubot1 -param robot_description" 
+    args="-x $(arg x) -y $(arg y) -z $(arg z) -R $(arg R) -P $(arg P) -Y $(arg Y) -unpause -urdf -model ironfish -param robot_description" 
     respawn="false" output="screen"/>
 
 
@@ -31,7 +31,7 @@
   <node name="diff_controller_spawner" pkg="controller_manager" type="spawner"
     args="ironfish_joint_state_controller
           ironfish_diff_drive_controller"
-    respawn="true"/>
+  respawn="true"/>
 
   <group if="$(arg rqt_steering)">
     <node name="rqt_robot_steering" pkg="rqt_robot_steering" type="rqt_robot_steering">

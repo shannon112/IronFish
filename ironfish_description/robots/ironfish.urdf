@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <robot
   name="ironfish">
   <include filename="$(find ironfish_description)/robots/ironfish.gazebo"/>
@@ -7,7 +8,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <box size="0 0 0" />
+        <box size="0.1 0.1 0.1" />
       </geometry>
     </visual>
   </link>
@@ -20,7 +21,7 @@
     name="base_link">
     <inertial>
       <origin
-        xyz="0.0 0.0 0.0"
+        xyz="0 0 0"
         rpy="0 0 0" />
       <mass
         value="9.63917377366023" />
@@ -183,7 +184,7 @@
         xyz="2.6021E-18 -1.1102E-16 -0.01"
         rpy="0 0 0" />
       <mass
-        value="0" />
+        value="1" />
       <inertia
         ixx="0"
         ixy="0"
