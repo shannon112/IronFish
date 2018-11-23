@@ -18,22 +18,37 @@ This folder is for the robot hardware info. No code inside. Check it out at iron
 This package is for ironfish gazebo/rviz ros launch files. Check it out at ironfish_description/README.md
   
 ## Quickly start
-#### Real world control
-Launch control node (with gui control panel)
+#### Control nodes
+Launch real world control node (with gui control panel)
 ```
 roslaunch ironfish_ros_control ironfish_ros_control.launch
 (roslaunch ironfish_ros_control ironfish_ros_control.launch rqt_steering:=1)
 ```
-#### Simulation world control
+Launch simulation(gazebo) world control node 
+```
+roslaunch ironfish_description ironfish_gazebo.launch
+```
 Launch rviz
 ```
 roslaunch ironfish_description ironfish_rviz.launch
 ```
-Launch gazebo
+#### Sensor nodes
+Launch hokuyo laser
+urg_node
 ```
-roslaunch ironfish_description ironfish_gazebo.launch
+roslaunch 
 ```
-#### Tools
+Launch intel realsense rgbd-camera
+realsense
+```
+roslaunch 
+```
+Launch microsoft kinectv1 rgbd-camera
+openni
+```
+roslaunch 
+```
+#### Tool nodes
 Launch control panel
 ```
 rosrun rqt_robot_steering rqt_robot_steering
