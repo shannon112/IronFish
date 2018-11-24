@@ -1,6 +1,6 @@
 <launch>
   <arg name="rqt_steering" default="false"/>
-  <arg name="model" default="$(find ironfish_description)/robots/ironfish.urdf"/>
+  <arg name="model" default="$(find ironfish_description)/robots/ironfish.urdf.xacro"/>
   <arg name="diffconfig" default="$(find ironfish_ros_control)/config/ironfish_ros_control_real.yaml"/>
 
   <param name="robot_description" command="$(find xacro)/xacro.py $(arg model)" />

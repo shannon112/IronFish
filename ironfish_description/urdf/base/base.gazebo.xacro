@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!-- Extensions -->
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <!-- Base -->
+  <xacro:macro name="ironfish_base_gazebo">
+    <gazebo reference="base_link">
+      <material>Gazebo/White</material>
+      <mu1 value="0.0"/>
+      <mu2 value="0.0"/>
+      <kp value="1000000.0"/>
+      <kd value="1.0"/>
+    </gazebo>
+  </xacro:macro>
+
+  <!-- Right and left wheels -->
+  <xacro:macro name="ironfish_rl_wheel_gazebo">
+    <gazebo reference="right_wheel">
+      <material>Gazebo/Black</material>
+      <mu1 value="100.0"/>
+      <mu2 value="100.0"/>
+      <kp value="1000000.0"/>
+      <kd value="1.0"/>
+      <fdir1 value="1 0 0"/>
+      <dampingFactor value="0.1"/>
+    </gazebo>
+
+    <gazebo reference="left_wheel">
+      <material>Gazebo/Black</material>
+      <mu1 value="100.0"/>
+      <mu2 value="100.0"/>
+      <kp value="1000000.0" />
+      <kd value="1.0" />
+      <fdir1 value="1 0 0"/>
+      <dampingFactor value="0.1"/>
+    </gazebo>
+  </xacro:macro>
+</robot>

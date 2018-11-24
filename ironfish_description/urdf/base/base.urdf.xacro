@@ -1,0 +1,189 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:include filename="$(find ironfish_description)/urdf/base/base.transmission.xacro"/>
+  <xacro:include filename="$(find ironfish_description)/urdf/base/base.gazebo.xacro" />
+  <xacro:include filename="$(find ironfish_description)/urdf/sensors/hokuyo_utm30lx.urdf.xacro" />
+
+  <xacro:property name="pi" value="3.1415926535897931" />
+
+  <xacro:macro name="r_wheel">
+    <link name="rwheel_link">
+      <inertial>
+        <origin
+          xyz="0.00222524026865972 0.173009757872407 -0.000157420245397055"
+          rpy="0 0 0" />
+        <mass
+          value="0.0963917377366023" />
+        <inertia
+          ixx="0.232225456967381"
+          ixy="0.0"
+          ixz="0.0"
+          iyy="0.232225456967381"
+          iyz="0.0"
+          izz="0.232225456967381" />
+      </inertial>
+      <visual>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://ironfish_description/meshes/rwheel_link.STL" />
+        </geometry>
+        <material
+          name="black">
+        </material>
+      </visual>
+      <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://ironfish_description/meshes/rwheel_link.STL" />
+        </geometry>
+      </collision>
+    </link>
+    <joint
+      name="rwheel_joint"
+      type="continuous">
+      <origin
+        xyz="0.0600000000000003 -0.178955289353836 -0.0124450740677247"
+        rpy="0 0 0" />
+      <parent
+        link="base_link" />
+      <child
+        link="rwheel_link" />
+      <axis
+        xyz="0 1 0" />
+    </joint>
+
+    <!-- Extensions -->
+    <xacro:ironfish_rl_wheel_gazebo/>
+    <xacro:ironfish_rwheel_trans/>
+  </xacro:macro>
+
+
+  <xacro:macro name="l_wheel">
+    <link name="lwheel_link">
+      <inertial>
+        <origin
+          xyz="0.00222524026865972 -0.173009757872407 -0.000157420245397055"
+          rpy="0 0 0" />
+        <mass
+          value="0.0963917377366023" />
+          <inertia
+            ixx="0.232225456967381"
+            ixy="0.0"
+            ixz="0.0"
+            iyy="0.232225456967381"
+            iyz="0.0"
+            izz="0.232225456967381" />
+        </inertial>
+      <visual>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://ironfish_description/meshes/lwheel_link.STL" />
+        </geometry>
+        <material
+          name="black">
+        </material>
+      </visual>
+      <collision>
+        <origin
+          xyz="0 0 0"
+          rpy="0 0 0" />
+        <geometry>
+          <mesh
+            filename="package://ironfish_description/meshes/lwheel_link.STL" />
+        </geometry>
+      </collision>
+    </link>
+    <joint
+      name="lwheel_joint"
+      type="continuous">
+      <origin
+        xyz="0.0600000000000003 0.178955289353836 -0.0124450740677247"
+        rpy="0 0 0" />
+      <parent
+        link="base_link" />
+      <child
+        link="lwheel_link" />
+      <axis
+        xyz="0 1 0" />
+    </joint>
+
+    <!-- Extensions -->
+    <xacro:ironfish_rl_wheel_gazebo/>
+    <xacro:ironfish_lwheel_trans/>
+  </xacro:macro>
+
+
+    <xacro:macro name="ironfish_base">
+      <link name="base_footprint">
+        <visual>
+          <origin xyz="0 0 0" rpy="0 0 0" />
+          <geometry>
+            <box size="0.001 0.001 0.001" />
+          </geometry>
+        </visual>
+      </link>
+
+      <joint name="base_footprint_joint" type="fixed">
+        <origin xyz="0 0 0.1124430740677247" rpy="0 0 0" />
+        <child link="base_link" />
+        <parent link="base_footprint"/>
+      </joint>
+
+      <link name="base_link">
+        <inertial>
+          <origin
+            xyz="0.0 0.0 0.0"
+            rpy="0 0 0" />
+          <mass
+            value="99.63917377366023" />
+          <inertia
+            ixx="0.23820634587875"
+            ixy="0"
+            ixz="0"
+            iyy="0.23820634587875"
+            iyz="0"
+            izz="0.23820634587875" />
+        </inertial>
+        <visual>
+          <origin
+            xyz="0 -0.0 0"
+            rpy="0 0 0" />
+          <geometry>
+            <mesh
+              filename="package://ironfish_description/meshes/base_link.STL" />
+          </geometry>
+          <material
+            name="white">
+          </material>
+        </visual>
+        <collision>
+          <origin
+            xyz="0 0 0"
+            rpy="0 0 0" />
+          <geometry>
+            <mesh
+              filename="package://ironfish_description/meshes/base_link.STL" />
+          </geometry>
+        </collision>
+      </link>
+
+    <!-- Wheel macros -->
+    <xacro:r_wheel />
+    <xacro:l_wheel />
+
+    <!-- Hokuyo utm30lx-->
+    <xacro:hokuyo_utm30lx name="hokuyo" parent="base_link"/>
+
+    <!-- Extensions -->
+    <xacro:ironfish_base_gazebo/>
+  </xacro:macro>
+</robot>

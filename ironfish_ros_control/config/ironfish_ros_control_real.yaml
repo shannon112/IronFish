@@ -20,7 +20,7 @@ ironfish_diff_drive_controller:
   wheel_radius : 0.1
 
   # Wheel separation and radius multipliers
-  wheel_separation_multiplier: 1.0 # default: 1.0
+  wheel_separation_multiplier: 1.5 # default: 1.0
   wheel_radius_multiplier    : 1.0 # default: 1.0
 
   # Velocity commands timeout [s], default 0.5

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<robot name="ironfish" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <!-- Base and wheel for iubot1 -->
+  <xacro:include filename="$(find ironfish_description)/urdf/base/base.urdf.xacro"/>
+  <!-- colors for iubot1 -->
+  <xacro:include filename="$(find ironfish_description)/urdf/materials.xacro"/>
+  <!-- Gazebo plugin -->
+  <xacro:include filename="$(find ironfish_description)/gazebo/gazebo.urdf.xacro"/>
+  <!-- Variables -->
+  <xacro:property name="M_PI" value="3.1415926535897931" />
+
+  <!-- Use the macros to define ironfish -->
+  <xacro:ironfish_base/>
+
+</robot>

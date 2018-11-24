@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!-- Extensions -->
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <!-- wheel transmission -->
+  <xacro:macro name="ironfish_rwheel_trans">
+    <transmission name="rwheel_trans" type="SimpleTransmission">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="rwheel_joint">
+        <hardwareInterface>VelocityJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="rwheel_motor">
+        <mechanicalReduction>1</mechanicalReduction>
+        <hardwareInterface>VelocityJointInterface</hardwareInterface>
+      </actuator>
+    </transmission>
+  </xacro:macro>
+
+
+  <xacro:macro name="ironfish_lwheel_trans">
+    <transmission name="lwheel_trans" type="SimpleTransmission">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="lwheel_joint">
+        <hardwareInterface>VelocityJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="lwheel_motor">
+        <mechanicalReduction>1</mechanicalReduction>
+        <hardwareInterface>VelocityJointInterface</hardwareInterface>
+      </actuator>
+    </transmission>
+  </xacro:macro>
+
+</robot>

@@ -1,8 +1,8 @@
 <launch>
   <arg name="rqt_steering" default="true"/>
   <arg name="rviz" default="true"/>
-  <arg name="model" default="$(find ironfish_description)/robots/ironfish.urdf"/>
-  <arg name="world_name" default="$(find ironfish_description)/world/empty.world"/>
+  <arg name="model" default="$(find ironfish_description)/robots/ironfish.urdf.xacro"/>
+  <arg name="world_name" default="$(find ironfish_description)/world/ironfish_room.world"/>
   <arg name="rvizconfig" default="$(find ironfish_description)/rviz/ironfish.rviz" />
   <arg name="diffconfig" default="$(find ironfish_ros_control)/config/ironfish_ros_control_sim.yaml" />
   <arg name="x" default="0"/>
@@ -20,7 +20,7 @@
   <rosparam command="load" file="$(arg diffconfig)"/>
 
   <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model"
-    args="-x $(arg x) -y $(arg y) -z $(arg z) -R $(arg R) -P $(arg P) -Y $(arg Y) -unpause -urdf -model ironfish -param robot_description" 
+    args="-x $(arg x) -y $(arg y) -z $(arg z) -R $(arg R) -P $(arg P) -Y $(arg Y) -unpause -urdf -model ironfish -param robot_description"
     respawn="false" output="screen"/>
 
 
