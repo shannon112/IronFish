@@ -1,0 +1,6 @@
+<launch>
+  <node name="slam_gmapping" pkg="gmapping" type="slam_gmapping" output="log"> 
+    <param name="base_frame" value="base_link"/>
+    <param name="odom_frame" value="odom"/>
+  </node>
+</launch>

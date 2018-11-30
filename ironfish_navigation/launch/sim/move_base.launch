@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+
+<launch>
+  <arg name="use_carrot" default="false"/>
+  <arg name="use_trajectory" default="false"/>
+  <arg name="carrot_step_size" default="0.05"/>
+  <arg name="carrot_min_dist_from_robot" default="0.50"/>
+
+  <arg name="controller_frequency" default="4.0"/>
+  <arg name="remap_cmd_vel" default="true"/>
+  <arg name="remap_odom" default="true"/>
+  <arg name="no_static_map" default="true"/>
+
+  <!-- global planner -->
+  <arg name="base_global_planner" default="carrot_planner/CarrotPlanner" if="$(arg use_carrot)">
+    <param name="step_size" value="$(arg carrot_step_size)"/>
+    <param name="min_dist_from_robot" value="$(arg carrot_min_dist_from_robot)"/>
+  </arg>
+  <arg name="base_global_planner" default="navfn/NavfnROS" unless="$(arg use_carrot)"/>
+
+  <!-- local planner -->
+  <arg name="base_local_planner" default="base_local_planner/TrajectoryPlannerROS" if="$(arg use_trajectory)"/>
+  <arg name="base_local_planner" default="dwa_local_planner/DWAPlannerROS" unless="$(arg use_trajectory)"/>
+
+
+  <!-- move base node -->
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+    <param name="controller_frequency" value="$(arg controller_frequency)"/>
+
+    <param name="base_global_planner" value="$(arg base_global_planner)"/>
+    <param name="base_local_planner" value="$(arg base_local_planner)"/>
+    <rosparam file="$(find ironfish_navigation)/param/sim/planner.yaml" command="load"/>
+
+    <!-- observation sources located in costmap_common.yaml -->
+    <rosparam file="$(find ironfish_navigation)/param/sim/costmap_common.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find ironfish_navigation)/param/sim/costmap_common.yaml" command="load" ns="local_costmap" />
+
+    <!-- local costmap, needs size -->
+    <rosparam file="$(find ironfish_navigation)/param/sim/costmap_local.yaml" command="load" ns="local_costmap" />
+    <param name="local_costmap/width" value="10.0"/>
+    <param name="local_costmap/height" value="10.0"/>
+
+    <!-- static global costmap, static map provides size -->
+    <rosparam file="$(find ironfish_navigation)/param/sim/costmap_global_static.yaml" command="load" ns="global_costmap" unless="$(arg no_static_map)"/>
+
+    <!-- global costmap with laser, for odom_navigation_demo -->
+    <rosparam file="$(find ironfish_navigation)/param/sim/costmap_global_laser.yaml" command="load" ns="global_costmap" if="$(arg no_static_map)"/>
+    <param name="global_costmap/width" value="20.0" if="$(arg no_static_map)"/>
+    <param name="global_costmap/height" value="20.0" if="$(arg no_static_map)"/>
+
+    <remap from="cmd_vel" to="/ironfish_diff_drive_controller/cmd_vel" if="$(arg remap_cmd_vel)"/>
+    <remap from="odom" to="/ironfish_diff_drive_controller/odom" if="$(arg remap_odom)"/>
+  </node>
+
+</launch>

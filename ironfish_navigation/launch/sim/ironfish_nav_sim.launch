@@ -1,0 +1,11 @@
+<launch>
+  <arg name="rvizconfig" default="$(find ironfish_navigation)/rviz/ironfish.rviz"/>
+  <arg name="world_name" default="$(find ironfish_description)/world/iceira302.world"/>
+
+  <include file="$(find ironfish_description)/launch/ironfish_gazebo.launch">
+    <arg name="rvizconfig" value="$(arg rvizconfig)"/>
+    <arg name="world_name" value="$(arg world_name)"/>
+  </include>
+  <include file="$(find ironfish_navigation)/launch/sim/move_base.launch"/>
+  <include file="$(find ironfish_navigation)/launch/sim/slam_gmapping.launch"/>
+</launch>

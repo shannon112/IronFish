@@ -1,7 +1,9 @@
 <launch>
   <arg name="rqt_steering" default="false"/>
+  <arg name="rviz" default="false"/>
   <arg name="model" default="$(find ironfish_description)/robots/ironfish.urdf.xacro"/>
   <arg name="diffconfig" default="$(find ironfish_ros_control)/config/ironfish_ros_control_real.yaml"/>
+  <arg name="rvizconfig" default="$(find ironfish_ros_control)/rviz/ironfish.rviz" />
 
   <param name="robot_description" command="$(find xacro)/xacro.py $(arg model)" />
   <rosparam command="load" file="$(arg diffconfig)"/>
@@ -28,8 +30,7 @@
       <!--param name="default_vx_min" value="-0.25"/-->
     </node>
   </group>
-
-  <!--Rviz-->
-  <!--node name="rviz" pkg="rviz" type="rviz" required="true"
-    args="-d $(find m700_ros_control)/rviz/m700.rviz" /-->
+  <group if="$(arg rviz)">
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" />
+  </group>
 </launch>
