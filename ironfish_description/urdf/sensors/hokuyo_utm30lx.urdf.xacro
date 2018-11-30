@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
-  <xacro:include filename="$(find rsc_car_description)/urdf/sensors/hokuyo_utm30lx.gazebo.xacro" />
+  <xacro:include filename="$(find ironfish_description)/urdf/sensors/hokuyo_utm30lx.gazebo.xacro" />
   <xacro:macro name="hokuyo_utm30lx" params="name parent">
     <joint name="${name}_joint" type="fixed">
       <!--origin xyz="0.105 0.000 0.229" rpy="0 0 0" /-->
@@ -18,7 +18,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-        <mesh filename="package://rsc_car_description/meshes/hokuyo_utm30lx/hokuyo_utm_30lx.dae"/>
+        <mesh filename="package://ironfish_description/meshes/hokuyo_utm30lx/hokuyo_utm_30lx.dae"/>
       </geometry>
       </visual>
       <collision>
