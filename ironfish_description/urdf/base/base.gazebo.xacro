@@ -14,7 +14,7 @@
   </xacro:macro>
 
   <!-- Right and left wheels -->
-  <xacro:macro name="ironfish_rl_wheel_gazebo">
+  <xacro:macro name="ironfish_rwheel_gazebo">
     <gazebo reference="right_wheel">
       <material>Gazebo/Black</material>
       <mu1 value="100.0"/>
@@ -24,7 +24,9 @@
       <fdir1 value="1 0 0"/>
       <dampingFactor value="0.1"/>
     </gazebo>
+  </xacro:macro>
 
+  <xacro:macro name="ironfish_lwheel_gazebo">
     <gazebo reference="left_wheel">
       <material>Gazebo/Black</material>
       <mu1 value="100.0"/>
@@ -35,4 +37,5 @@
       <dampingFactor value="0.1"/>
     </gazebo>
   </xacro:macro>
+  
 </robot>

@@ -6,7 +6,7 @@
 
   <xacro:property name="pi" value="3.1415926535897931" />
 
-  <xacro:macro name="r_wheel">
+  <xacro:macro name="rwheel">
     <link name="rwheel_link">
       <inertial>
         <origin
@@ -57,14 +57,13 @@
       <axis
         xyz="0 1 0" />
     </joint>
-
     <!-- Extensions -->
-    <xacro:ironfish_rl_wheel_gazebo/>
+    <xacro:ironfish_rwheel_gazebo/>
     <xacro:ironfish_rwheel_trans/>
   </xacro:macro>
 
 
-  <xacro:macro name="l_wheel">
+  <xacro:macro name="lwheel">
     <link name="lwheel_link">
       <inertial>
         <origin
@@ -117,7 +116,7 @@
     </joint>
 
     <!-- Extensions -->
-    <xacro:ironfish_rl_wheel_gazebo/>
+    <xacro:ironfish_lwheel_gazebo/>
     <xacro:ironfish_lwheel_trans/>
   </xacro:macro>
 
@@ -177,8 +176,8 @@
       </link>
 
     <!-- Wheel macros -->
-    <xacro:r_wheel />
-    <xacro:l_wheel />
+    <xacro:rwheel />
+    <xacro:lwheel />
 
     <!-- Hokuyo utm30lx-->
     <xacro:hokuyo_utm30lx name="hokuyo" parent="base_link"/>

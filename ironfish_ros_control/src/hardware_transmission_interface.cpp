@@ -71,7 +71,7 @@ void HwTmIntf::update()
 #if 1
   std::cout << "Write : " << std::endl;
   std::cout << "1v" << hw_data_.act_cmd_vel_[0] * (30 / PI)<< " rpm" << std::endl;
-  std::cout << "0v" << hw_data_.act_cmd_vel_[1] * (30 / PI)<< " rpm" << std::endl;
+  std::cout << "2v" << hw_data_.act_cmd_vel_[1] * (30 / PI)<< " rpm" << std::endl;
   std::cout << "=======================================\n" << std::endl;
 #endif
 
@@ -81,7 +81,7 @@ void HwTmIntf::update()
   ironfish_port.writeData(ss_cmd_vel_.str());
 
   ss_cmd_vel_.str("");
-  ss_cmd_vel_ << "0v" << -(hw_data_.act_cmd_vel_[1] * (30 / PI)) << "\r"; // Left wheel (node 2)
+  ss_cmd_vel_ << "2v" << -(hw_data_.act_cmd_vel_[1] * (30 / PI)) << "\r"; // Left wheel (node 2)
   ironfish_port.writeData(ss_cmd_vel_.str());
 
   // Read data from motors
@@ -92,7 +92,7 @@ void HwTmIntf::update()
 
 
   ss_curr_vel_.str("");
-  ss_curr_vel_ << 0 << "pos\r"; // Left wheel (node 2)
+  ss_curr_vel_ << 2 << "pos\r"; // Left wheel (node 2)
   ironfish_port.writeData(ss_curr_vel_.str());
   hw_data_.act_curr_pos_[1] = -((float)atoi((ironfish_port.readData()).c_str()) / ENC_FULL) * (2 * PI);
 
