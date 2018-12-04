@@ -2,7 +2,7 @@
   <arg name="rqt_steering" default="true"/>
   <arg name="rviz" default="true"/>
   <arg name="model" default="$(find ironfish_description)/robots/ironfish.urdf.xacro"/>
-  <arg name="world_name" default="$(find ironfish_description)/world/ironfish_room.world"/>
+  <arg name="world_name" default="$(find ironfish_description)/world/iceira302.world"/>
   <arg name="rvizconfig" default="$(find ironfish_description)/rviz/ironfish.rviz" />
   <arg name="diffconfig" default="$(find ironfish_ros_control)/config/ironfish_ros_control_sim.yaml" />
   <arg name="x" default="0"/>
