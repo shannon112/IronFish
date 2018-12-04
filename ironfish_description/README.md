@@ -1,29 +1,6 @@
 # ironfish_description
 This package is for ironfish gazebo/rviz ros launch files.
 
-### Structure
-```
-├── CMakeLists.txt
-├── launch                      //It contains launch files
-│   ├── ironfish_gazebo.launch   //It would open rviz, rqt, gazebo at once
-│   └── ironfish_rviz.launch
-├── meshes                      //It contains solidwork robot model component
-│   ├── base_link.STL
-│   ├── hokuyo_link.STL
-│   ├── lwheel_link.STL
-│   └── rwheel_link.STL
-├── package.xml
-├── README.md
-├── robots                  //* gazebo robot model at robot/
-│   ├── ironfish.gazebo
-│   ├── ironfish_materials.xacro
-│   └── ironfish.urdf
-├── rviz                      //It contains rviz config file
-│   └── ironfish_rviz.rviz
-└── world                     //It contains gazebo world
-    └── ironfish_room.world
-```
-
 ### Dependencies
 ```
   <buildtool_depend>catkin</buildtool_depend>
@@ -37,6 +14,10 @@ Install gazebo-ros-control:
 http://wiki.ros.org/gazebo_ros_control
 ```
 sudo apt install ros-kinetic-gazebo-ros-control
+```
+Git clone the iceira_gazebo pkg and catkin_make it
+```
+https://github.com/willie5588912/iceira_gazebo.git
 ```
 
 ### Builts
