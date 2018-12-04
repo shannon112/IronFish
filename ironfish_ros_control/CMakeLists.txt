@@ -14,7 +14,7 @@ find_package(catkin REQUIRED COMPONENTS
   transmission_interface
   diff_drive_controller
   joint_state_controller
-  ironfish_uart 
+  ironfish_uart
 )
 ## same as we mentioned in package.xml
 
@@ -128,7 +128,7 @@ catkin_package(
   transmission_interface
   diff_drive_controller
   joint_state_controller
-  ironfish_uart 
+  ironfish_uart
 
 #  DEPENDS system_lib
 )
@@ -211,7 +211,7 @@ install(TARGETS ironfish_ros_control ironfish
 )
 
 install(
-  DIRECTORY config launch
+  DIRECTORY config launch rviz
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 # all install targets should use catkin DESTINATION variables
