@@ -4,7 +4,7 @@
 Ironfish is a simple ROS mobile robot that you can simply build it by yourself!   
 (**ROS kinetic** is recommended)  
 * Processor: Your laptop
-* Sensor: Kinect, RealSense, Hokuyo lazer
+* Sensor: Kinect, RealSense, Hokuyo LiDAR
 * Actuator: Two DC motor with two wheels, and one guide wheel.
   
 ## Introduction 
@@ -22,7 +22,7 @@ For ironfish gazebo simulation and control. Check it out at ironfish_gazebo/READ
 * ironfish_sensors:   
 For driving ironfish sensors. Check it out at ironfish_sensors/README.md
 * ironfish_navigation:   
-For ironfish high level application -- navigation and slam. Check it out at ironfish_description/README.md
+For ironfish high level application -- navigation and slam. Check it out at ironfish_navigation/README.md
 
 ## Dependences
 Please check and read at all packages in IronFish/<pkg_name>/README.md  
