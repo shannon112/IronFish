@@ -7,23 +7,19 @@ Ironfish is a simple ROS mobile robot that you can simply build it by yourself!
 * Sensor: Kinect, RealSense, Hokuyo LiDAR
 * Actuator: Two DC motor with two wheels, and one guide wheel.
   
-## Introduction 
-There are 7 pkgs  
-* ironfish_hardware:  
-For the robot hardware info. No code inside. Check it out at ironfish_hardware/README.md  
-* ironfish_ros_control:  
-For controlling the robot in real world. Check it out at ironfish_ros_control/README.md  
-* ironfish_uart:  
-For helping ironfish_ros_control to communicate with the robot in real world. Check it out at ironfish_uart/README.md  
-* ironfish_description:   
-For ironfish's robot model. Check it out at ironfish_description/README.md
-* ironfish_gazebo:   
-For ironfish gazebo simulation and control. Check it out at ironfish_gazebo/README.md
-* ironfish_sensors:   
-For driving ironfish sensors. Check it out at ironfish_sensors/README.md
-* ironfish_navigation:   
-For ironfish high level application -- navigation and slam. Check it out at ironfish_navigation/README.md
+## Overview 
+There are 7 pkgs in IronFish:   
 
+| Pkg's name | Description            | 
+| -----------| ----------------       |
+| ironfish_hardware | For the robot hardware info. No code inside. Check it out at ironfish_hardware/README.md |
+| ironfish_ros_control |  For controlling the robot in real world. Check it out at ironfish_ros_control/README.md |  
+| ironfish_uart |  For helping ironfish_ros_control to communicate with the robot in real world. Check it out at ironfish_uart/README.md  |
+| ironfish_description |  For ironfish's robot model. Check it out at ironfish_description/README.md |
+| ironfish_gazebo |  For ironfish gazebo simulation and control. Check it out at ironfish_gazebo/README.md |
+| ironfish_sensors |  For driving ironfish sensors. Check it out at ironfish_sensors/README.md |
+| ironfish_navigation |  For ironfish high level application -- navigation and slam. Check it out at ironfish_navigation/README.md |
+  
 ## Dependences
 Please check and read at all packages in IronFish/<pkg_name>/README.md  
 
