@@ -1,52 +1,78 @@
-# Ironfish
+# IronFish
 <img src="https://github.com/shannon112/IronFish/blob/master/ironfish.png" width="350">
 
-Ironfish is a simple ROS mobile robot that you can simply build it by yourself! (ROS kinetic is recommended)  
+Ironfish is a simple ROS mobile robot that you can simply build it by yourself!   
+(**ROS kinetic** is recommended)  
 * Processor: Your laptop
-* Sensor: Kinect, RealSense, Hokuyo lazer
+* Sensor: Kinect, RealSense, Hokuyo LiDAR
 * Actuator: Two DC motor with two wheels, and one guide wheel.
   
 ## Introduction 
-There are 4 pkgs including 3 launch files  
+There are 7 pkgs  
 * ironfish_hardware:  
-This folder is for the robot hardware info. No code inside. Check it out at ironfish_hardware/README.md
+For the robot hardware info. No code inside. Check it out at ironfish_hardware/README.md  
 * ironfish_ros_control:  
-
+For controlling the robot in real world. Check it out at ironfish_ros_control/README.md  
 * ironfish_uart:  
-
+For helping ironfish_ros_control to communicate with the robot in real world. Check it out at ironfish_uart/README.md  
 * ironfish_description:   
-This package is for ironfish gazebo/rviz ros launch files. Check it out at ironfish_description/README.md
-  
+For ironfish's robot model. Check it out at ironfish_description/README.md
+* ironfish_gazebo:   
+For ironfish gazebo simulation and control. Check it out at ironfish_gazebo/README.md
+* ironfish_sensors:   
+For driving ironfish sensors. Check it out at ironfish_sensors/README.md
+* ironfish_navigation:   
+For ironfish high level application -- navigation and slam. Check it out at ironfish_navigation/README.md
+
+## Dependences
+Please check and read at all packages in IronFish/<pkg_name>/README.md  
+
 ## Quickly start
 #### Control nodes
 Launch real world control node (with gui control panel)
 ```
 roslaunch ironfish_ros_control ironfish_ros_control.launch
-(roslaunch ironfish_ros_control ironfish_ros_control.launch rqt_steering:=1)
+(roslaunch ironfish_ros_control ironfish_ros_control.launch rqt_steering:=1 rviz:=1)
 ```
 Launch simulation(gazebo) world control node 
 ```
 roslaunch ironfish_description ironfish_gazebo.launch
 ```
-Launch rviz
-```
-roslaunch ironfish_description ironfish_rviz.launch
-```
 #### Sensor nodes
-Launch hokuyo laser
-urg_node
+Launch hokuyo LiDAR (urg_node)
 ```
-roslaunch 
+roslaunch ironfish_sensors urg.launch
 ```
-Launch intel realsense rgbd-camera
-realsense
+Launch intel realsense rgbd-camera (realsense_camera)
 ```
-roslaunch 
+roslaunch ironfish_sensors realsense.launch
 ```
-Launch microsoft kinectv1 rgbd-camera
-openni
+Launch microsoft kinectv1 rgbd-camera (openni_node)
 ```
-roslaunch 
+roslaunch ironfish_sensors openni.launch
+```
+#### Mapping (SLAM)
+Launch gmapping for slam (slam_gmapping)  
+```
+roslaunch ironfish_navigation slam_gmapping.launch
+```
+Launch cartographer for slam (cartographer_ros)  
+```
+roslaunch ironfish_navigation cartographer_ros.launch
+```
+#### Navigation
+Launch navigation (move_base)  
+```
+roslaunch ironfish_navigation move_base.launch
+```
+#### High level application
+Launch steering & navigation and slam integration in real world  
+```
+roslaunch ironfish_navigation ironfish_nav_real.launch
+```
+Launch steering & navigation and slam integration in simulation world  
+```
+roslaunch ironfish_navigation ironfish_nav_sim.launch
 ```
 #### Tool nodes
 Launch control panel
