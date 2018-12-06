@@ -7,7 +7,7 @@ project(ironfish_description)
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
-find_package(catkin REQUIRED gazebo_ros_control)
+find_package(catkin REQUIRED)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -101,7 +101,7 @@ find_package(catkin REQUIRED gazebo_ros_control)
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES rsc_car_description
-  CATKIN_DEPENDS gazebo_ros_control
+#  CATKIN_DEPENDS gazebo_ros_control
 #  DEPENDS system_lib
 )
 
@@ -148,7 +148,7 @@ catkin_package(
 #############
 
 install(
-  DIRECTORY launch robots world rviz meshes
+  DIRECTORY robots meshes urdf gazebo
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 # all install targets should use catkin DESTINATION variables

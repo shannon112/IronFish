@@ -1,8 +1,8 @@
 <launch>
   <arg name="rvizconfig" default="$(find ironfish_navigation)/rviz/ironfish.rviz"/>
-  <arg name="world_name" default="$(find ironfish_description)/world/iceira302.world"/>
+  <arg name="world_name" default="$(find ironfish_gazebo)/world/iceira302.world"/>
 
-  <include file="$(find ironfish_description)/launch/ironfish_gazebo.launch">
+  <include file="$(find ironfish_gazebo)/launch/ironfish_gazebo.launch">
     <arg name="rvizconfig" value="$(arg rvizconfig)"/>
     <arg name="world_name" value="$(arg world_name)"/>
   </include>

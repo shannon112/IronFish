@@ -9,7 +9,7 @@
     <arg name="rviz" value="$(arg rviz)"/>
     <arg name="rqt_steering" value="$(arg rqt_steering)"/>
   </include>
-  <include file="$(find ironfish_navigation)/launch/real/urg.launch"/>
+  <include file="$(find ironfish_sensors)/launch/urg.launch"/>
   <include file="$(find ironfish_navigation)/launch/real/move_base.launch"/>
   <include file="$(find ironfish_navigation)/launch/real/slam_gmapping.launch"/>
 </launch>
