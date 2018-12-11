@@ -16,7 +16,7 @@ There are 7 pkgs in IronFish:
 | ironfish_ros_control |  For controlling the robot in real world. Check it out at ironfish_ros_control/README.md |  
 | ironfish_uart |  For helping ironfish_ros_control to communicate with the robot in real world. Check it out at ironfish_uart/README.md  |
 | ironfish_description |  For ironfish's robot model. Check it out at ironfish_description/README.md |
-| ironfish_gazebo |  For ironfish gazebo simulation and control. Check it out at ironfish_gazebo/README.md |
+| ironfish_gazebo |  For ironfish gazebo simulation(including control and sense). Check it out at ironfish_gazebo/README.md |
 | ironfish_sensors |  For driving ironfish sensors. Check it out at ironfish_sensors/README.md |
 | ironfish_navigation |  For ironfish high level application -- navigation and slam. Check it out at ironfish_navigation/README.md |
   
