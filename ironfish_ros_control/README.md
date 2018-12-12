@@ -18,6 +18,7 @@ rqt_moveit | rqt_nav_view | rqt_pose_view | rqt_robot_dashboard | rqt_robot_moni
 ```
 sudo apt install ros-kinetic-rqt-robot-plugins
 ```
+# Getting more info if you are interested in this package
 
 ### Dependencies Reference
 At package.xml
