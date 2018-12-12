@@ -1,38 +1,22 @@
 # ironfish_description
-This package is for ironfish gazebo/rviz ros launch files.
+This is a ros package of ironfish's robot model(including plugins). No code in it.
 
 ### Dependencies
+None
+# Getting more info if you are interested in this package
+### Dependencies reference
+At package.xml
 ```
   <buildtool_depend>catkin</buildtool_depend>
-  <build_depend>gazebo-ros-control</build_depend>
-  <run_depend>gazebo-ros-control</run_depend>
 ```
+At CMakeLists.txt
 ```
-  find_package(catkin REQUIRED gazebo-ros-control)
-```
-Install gazebo-ros-control:
-http://wiki.ros.org/gazebo_ros_control
-```
-sudo apt install ros-kinetic-gazebo-ros-control
-```
-Git clone the iceira_gazebo pkg and catkin_make it
-```
-cd catkin_workspace/src
-git clone https://github.com/willie5588912/iceira_gazebo.git
-cd ..
-catkin_make
+  find_package(catkin REQUIRED)
+  catkin_package()
 ```
 
 ### Builts
-There is nothing be built.
+None
 
 ### Catkin message
-No
-
-### trouble shooting
-if you got the msg below:
-[WARN]Controller spawner couldn’t find the expected controller_manager ros interface
-you definitely have not installed gazebo-ros-control yet.
-```
-sudo apt install ros-kinetic-gazebo-ros-control
-```
+None
