@@ -34,7 +34,7 @@ Launch simulation(gazebo) world control node
 ```
 roslaunch ironfish_description ironfish_gazebo.launch
 ```
-#### Sensor nodes (in reality)
+#### Sensor nodes (only be needed in reality)
 Launch hokuyo LiDAR (urg_node)
 ```
 roslaunch ironfish_sensors urg.launch
