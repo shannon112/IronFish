@@ -1,4 +1,5 @@
 # ironfish_navigation
+<img src="https://github.com/shannon112/IronFish/blob/master/ironfish_navigation/slam.png" width="200"> <img src="https://github.com/shannon112/IronFish/blob/master/ironfish_navigation/navigation.png" width="200"> 
 This is a ros package for launching ironfish high level application in real/sim world -- navigation and slam. 
 
 ### Dependencies
