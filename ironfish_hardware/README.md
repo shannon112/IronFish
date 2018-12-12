@@ -1,5 +1,7 @@
 # ironfish_hardware
-This folder is for the robot hardware info.
+This folder is for the robot hardware info. No code inside.  
+**But,** make sure that you have followed the tutorial below to establish connection with your controllers  
+before implementing ros on it.
 
 ## Appearence
 <img src="https://github.com/shannon112/IronFish/blob/master/ironfish_hardware/IMG_0543.png" width="200"> <img src="https://github.com/shannon112/IronFish/blob/master/ironfish_hardware/IMG_0544.png" width="200"> <img src="https://github.com/shannon112/IronFish/blob/master/ironfish_hardware/v3-1.JPG" width="200"> <img src="https://github.com/shannon112/IronFish/blob/master/ironfish_hardware/v3-2.JPG" width="200">
@@ -36,12 +38,16 @@ This folder is for the robot hardware info.
 ## Simple test of communicating with controller
 Plugin wire's rs232 side to controller and usb side to your laptop. See if you can get a message of connecting new plugin device to ttyUSB0. If you do not see it, you may need to install the driver of that rs232-USB wire.
 ```
-dmseg
+dmesg
 ```
 Add group to get the authorization of hardware connected on your linux machine.  
-(You must log out and then log in again for this to take effect. This avoids issues for ttyUSB# or ttyACM# permissions.)
+This avoids issues for ttyUSB# or ttyACM# permissions.
 ```
 sudo usermod -a -G dialout <username>
+```
+You must log out and then log in again for this to take effect. Check if it works:
+```
+id -Gn
 ```
 Then, we need the tool "minicom" to directly send ascii data to controller
 ```
