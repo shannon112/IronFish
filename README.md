@@ -15,7 +15,7 @@ There are 7 pkgs in IronFish:
 | ironfish_hardware | **ironfish's** hardware **info**. No code inside. Check it out at ironfish_hardware/README.md |
 | ironfish_ros_control |  **launching** the control of robot in **real** world. Check it out at ironfish_ros_control/README.md |  
 | ironfish_uart |  **helping** ironfish_ros_control to communicate with the robot in **real** world. Check it out at ironfish_uart/README.md  |
-| ironfish_description | **ironfish's** robot **model**. Check it out at ironfish_description/README.md |
+| ironfish_description | **ironfish's** robot **model**(including plugins). Check it out at ironfish_description/README.md |
 | ironfish_gazebo |  **launching** ironfish gazebo **simulation**(including control and sense). Check it out at ironfish_gazebo/README.md |
 | ironfish_sensors |  **launching** the driver of ironfish sensors in **real** world. Check it out at ironfish_sensors/README.md |
 | ironfish_navigation | **launching** ironfish high level application in **real/sim** world -- navigation and slam. Check it out at ironfish_navigation/README.md |
