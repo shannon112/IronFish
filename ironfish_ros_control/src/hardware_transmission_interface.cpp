@@ -42,6 +42,9 @@ HwTmIntf::HwTmIntf(
   ironfish_port.set_stopBit(1);
   ironfish_port.set_parity(false);
   ironfish_port.set_hardwareFlowControl(false);
+
+  ironfish_port.writeData("1ANSW0\r");
+  ironfish_port.writeData("2ANSW0\r");
 }
 
 

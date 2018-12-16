@@ -1,11 +1,15 @@
 <launch>
+  <!--Argument in this launch file-->
   <arg name="rqt_steering" default="false"/>
   <arg name="rviz" default="false"/>
   <arg name="model" default="$(find ironfish_description)/robots/ironfish.urdf.xacro"/>
   <arg name="diffconfig" default="$(find ironfish_ros_control)/config/ironfish_ros_control_real.yaml"/>
   <arg name="rvizconfig" default="$(find ironfish_ros_control)/rviz/ironfish.rviz" />
 
+  <!-- Convert an xacro and put on parameter server-->
   <param name="robot_description" command="$(find xacro)/xacro.py $(arg model)" />
+  
+  <!--Load controller parameter-->
   <rosparam command="load" file="$(arg diffconfig)"/>
 
   <!--Spawn Controller-->
@@ -30,7 +34,10 @@
       <!--param name="default_vx_min" value="-0.25"/-->
     </node>
   </group>
+
+  <!--Gui rviz interface (Optional)-->
   <group if="$(arg rviz)">
     <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" />
   </group>
+
 </launch>
