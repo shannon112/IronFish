@@ -1,9 +1,27 @@
 # ironfish_ros_control
-This package is for \<usage\>\<meaning\>  
-This package is built as a library package but also a executable package.(one launch file and one executable file)  
-* /config is param which could be import(rosparam) by ironfish_ros_control.launch and ironfish_gazebo.launch
+This is a ros package for launching the control of robot in real world.  
+It is built as a library package but also a executable package.(one launch file and one executable file)  
 
 ### Dependencies
+* Install ros_control which including:   
+combined_robot_hw | combined_robot_hw_tests | controller_interface | **controller_manager** | controller_manager_msgs | controller_manager_tests | **hardware_interface** | joint_limits_interface | realtime_tools | **transmission_interface**
+```
+sudo apt-get install ros-kinetic-ros-control
+```
+* Install ros_controllers which including:   
+ackermann_steering_controller | **diff_drive_controller** | effort_controllers | force_torque_sensor_controller | forward_command_controller | gripper_action_controller | imu_sensor_controller | **joint_state_controller** | joint_trajectory_controller | position_controllers | rqt_joint_trajectory_controller | velocity_controllers
+```
+sudo apt-get install ros-kinetic-ros-controllers
+```
+* Install rqt_robot_plugins which including:   
+rqt_moveit | rqt_nav_view | rqt_pose_view | rqt_robot_dashboard | rqt_robot_monitor | **rqt_robot_steering** | rqt_runtime_monitor | rqt_rviz | **rqt_tf_tree**
+```
+sudo apt install ros-kinetic-rqt-robot-plugins
+```
+# Getting more info if you are interested in this package
+
+### Dependencies Reference
+At package.xml
 ```
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>roscpp</build_depend>
@@ -23,33 +41,29 @@ This package is built as a library package but also a executable package.(one la
   <run_depend>joint_state_controller</run_depend>
 
 ```
+At CMakeLists.txt
 ```
-catkin_package(
-  INCLUDE_DIRS include
-  CATKIN_DEPENDS roscpp
+find_package(catkin REQUIRED COMPONENTS
+  roscpp
   controller_manager
   hardware_interface
   transmission_interface
   diff_drive_controller
   joint_state_controller
-  ironfish_uart 
+  ironfish_uart
 )
 
-```
-* Install ros_control which including:   
-combined_robot_hw | combined_robot_hw_tests | controller_interface | **controller_manager** | controller_manager_msgs | controller_manager_tests | **hardware_interface** | joint_limits_interface | realtime_tools | **transmission_interface**
-```
-sudo apt-get install ros-kinetic-ros-control
-```
-* Install ros_controllers which including:   
-ackermann_steering_controller | **diff_drive_controller** | effort_controllers | force_torque_sensor_controller | forward_command_controller | gripper_action_controller | imu_sensor_controller | **joint_state_controller** | joint_trajectory_controller | position_controllers | rqt_joint_trajectory_controller | velocity_controllers
-```
-sudo apt-get install ros-kinetic-ros-controllers
-```
-* Install rqt_robot_plugins which including:   
-rqt_moveit | rqt_nav_view | rqt_pose_view | rqt_robot_dashboard | rqt_robot_monitor | **rqt_robot_steering** | rqt_runtime_monitor | rqt_rviz | **rqt_tf_tree**
-```
-sudo apt install ros-kinetic-rqt-robot-plugins
+catkin_package(
+  INCLUDE_DIRS include
+  CATKIN_DEPENDS roscpp
+                 controller_manager
+                 hardware_interface
+                 transmission_interface
+                 diff_drive_controller
+                 joint_state_controller
+                 ironfish_uart 
+)
+
 ```
 
 ### Builts
