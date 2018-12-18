@@ -76,6 +76,10 @@ Launch control panel
 ```
 rosrun rqt_robot_steering rqt_robot_steering
 ```
+Tuning config
+```
+rosrun rqt_reconfigure rqt_reconfigure
+```
 Analyzing
 ```
 rosrun rqt_graph rqt_graph
