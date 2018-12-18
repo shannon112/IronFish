@@ -1,0 +1,43 @@
+<robot
+  name="willie_home">
+  <link
+    name="willie_home">
+    <inertial>
+      <origin
+        xyz="4.478788989465 -1.05169237906254 1"
+        rpy="0 0 0" />
+      <mass
+        value="20484.6141552682" />
+      <inertia
+        ixx="149494.210167545"
+        ixy="15246.5416334673"
+        ixz="-1.87459426227887E-11"
+        iyy="191341.862694034"
+        iyz="-6.55783151809492E-12"
+        izz="327179.663424733" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://iceira_gazebo/meshes/willie_home.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://iceira_gazebo/meshes/willie_home.STL" />
+      </geometry>
+    </collision>
+  </link>
+</robot>

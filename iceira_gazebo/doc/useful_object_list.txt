@@ -1,0 +1,22 @@
+cabinet_ikea_galant.urdf
+cabinet_ikea_kallax_4x2.urdf
+cabinet_ikea_malm_big.urdf
+cabinet_ikea_malm_small.urdf
+cabinet_living_room.urdf
+cabinet.urdf.xacro
+cage_box.urdf
+chair_ikea_borje.urdf
+chair_wicker.urdf
+crate_large.urdf
+dresser_covaro.urdf
+dresser_louis.urdf
+dust_mop.urdf
+picture_bodegon.urdf
+plant_floor_big.urdf
+robot_arm.urdf
+shelf_white.urdf
+table_living_room.urdf
+table_tv.urdf
+tv_samsung.urdf
+
+command: rosrun gazebo_ros spawn_model -file bed.urdf -urdf -z 1 -model bed1

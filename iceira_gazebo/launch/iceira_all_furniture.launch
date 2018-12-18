@@ -1,0 +1,6 @@
+<launch>
+  <arg name="world_name" default="$(find iceira_gazebo)/world/iceira_v18.world"/>
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(arg world_name)"/>
+  </include>
+</launch>

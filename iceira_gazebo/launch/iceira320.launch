@@ -1,0 +1,11 @@
+<launch>
+  <arg name="world_name" default="$(find iceira_gazebo)/world/iceira302.world"/>
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(arg world_name)"/>
+  </include>
+  <!--arg name="model_path" value="$(find willie_home_gazebo)/objects"/-->
+
+  <!--node name="spawn_model" pkg="gazebo_ros" type="spawn_model" 
+    args="-file $(arg model_path)/willie_home.urdf -urdf -x -1 -y 1 -model willie_home"/-->
+</launch>
