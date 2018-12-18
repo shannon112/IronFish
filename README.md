@@ -35,29 +35,29 @@ Launch simulation(gazebo) world control node
 roslaunch ironfish_description ironfish_gazebo.launch
 ```
 #### Sensor nodes (only be needed in reality)
-Launch hokuyo LiDAR (urg_node)
+Launch hokuyo LiDAR  
 ```
 roslaunch ironfish_sensors urg.launch
 ```
-Launch intel realsense rgbd-camera (realsense_camera)
+Launch intel realsense rgbd-camera  
 ```
 roslaunch ironfish_sensors realsense.launch
 ```
-Launch microsoft kinectv1 rgbd-camera (openni_node)
+Launch microsoft kinectv1 rgbd-camera  
 ```
 roslaunch ironfish_sensors openni.launch
 ```
 #### Mapping aka. SLAM
-Launch gmapping for slam (slam_gmapping)  
+Launch gmapping for slam  
 ```
 roslaunch ironfish_navigation slam_gmapping.launch
 ```
-Launch cartographer for slam (cartographer_ros)  
+Launch cartographer for slam  
 ```
 roslaunch ironfish_navigation cartographer_ros.launch
 ```
 #### Navigation
-Launch navigation (move_base)  
+Launch navigation  
 ```
 roslaunch ironfish_navigation move_base.launch
 ```
