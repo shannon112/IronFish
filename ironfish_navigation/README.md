@@ -7,6 +7,7 @@ This is a ros package for launching ironfish high level application in real/sim 
 http://wiki.ros.org/openslam_gmapping
 ```
 sudo apt install ros-kinetic-openslam-gmapping
+sudo apt install ros-kinetic-slam-gmapping
 ```
 - Install move_base which including:  
 amcl | base_local_planner | carrot_planner | clear_costmap_recovery | costmap_2d | **dwa_local_planner** | 
