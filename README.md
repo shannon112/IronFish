@@ -8,7 +8,7 @@ Ironfish is a simple ROS mobile robot that you can simply build it by yourself!
 * Actuator: Two DC motor with two wheels, and one guide wheel.
   
 ## Overview 
-There are 7 pkgs in IronFish:   
+There are 8 pkgs in IronFish:   
 
 | Pkg's name | Description            | 
 | -----------| ----------------       |
@@ -17,6 +17,7 @@ There are 7 pkgs in IronFish:
 | ironfish_uart |  **helping** ironfish_ros_control to communicate with the robot in **real** world. Check it out at ironfish_uart/README.md  |
 | ironfish_description | **ironfish's** robot **model**(including plugins). Check it out at ironfish_description/README.md |
 | ironfish_gazebo |  **launching** ironfish gazebo **simulation**(including control and sense). Check it out at ironfish_gazebo/README.md |
+| iceira_gazebo | **iceira's** gazebo world. Check it out at iceira_gazebo/README.md |
 | ironfish_sensors |  **launching** the driver of ironfish sensors in **real** world. Check it out at ironfish_sensors/README.md |
 | ironfish_navigation | **launching** ironfish high level application in **real/sim** world -- navigation and slam. Check it out at ironfish_navigation/README.md |
   
