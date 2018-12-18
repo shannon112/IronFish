@@ -6,6 +6,10 @@ Install urg_node: http://wiki.ros.org/urg_node
 ```
 sudo apt install ros-kinetic-urg-node
 ```
+Install openni:http://wiki.ros.org/openni_launch
+```
+Please go through https://www.evernote.com/l/ATvjQg_dJ0JOSIujndgTWSIuqhwF1vAzPVQ
+```
 
 # Getting more info if you are interested in this package
 ### Dependencies reference
