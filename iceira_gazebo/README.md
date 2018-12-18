@@ -1,4 +1,5 @@
 ### Gazebo model of iCeiRA lab
+**credit to https://github.com/willie5588912/iceira_gazebo**
 #### Without furniture
 ```
 roslaunch iceira_gazebo iceira_all_raw.launch
