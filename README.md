@@ -1,11 +1,16 @@
 # IronFish
 <img src="https://github.com/shannon112/IronFish/blob/master/ironfish.png" width="350">
 
-Ironfish is a simple ROS mobile robot that you can simply build it by yourself!   
-(**ROS kinetic** is recommended)  
+Ironfish is a simple ROS mobile robot that you can simply build it by yourself!   (**ROS kinetic** is recommended)  
+Inspiration from:  
+https://github.com/willie5588912/rsc_car_course  
+https://github.com/willie5588912/iubot1  
+Especially thanks to @willie5588912  
 * Processor: Your laptop
 * Sensor: Kinect, RealSense, Hokuyo LiDAR
-* Actuator: Two DC motor with two wheels, and one guide wheel.
+* Actuator: Two DC motor with two wheels, and one guide wheel.  
+  
+
   
 ## Overview 
 There are 8 pkgs in IronFish:   
