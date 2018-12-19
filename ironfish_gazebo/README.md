@@ -7,13 +7,6 @@ http://wiki.ros.org/gazebo_ros_control
 ```
 sudo apt install ros-kinetic-gazebo-ros-control
 ```
-Git clone the iceira_gazebo pkg and catkin_make it
-```
-cd catkin_workspace/src
-git clone https://github.com/willie5588912/iceira_gazebo.git
-cd ..
-catkin_make
-```
 
 # Getting more info if you are interested in this package
 ### Dependencies reference
