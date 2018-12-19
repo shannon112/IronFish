@@ -47,7 +47,7 @@ roslaunch ironfish_sensors urg.launch
 ```
 Launch intel realsense rgbd-camera  
 ```
-roslaunch ironfish_sensors realsense.launch
+roslaunch ironfish_sensors rs_camera.launch
 ```
 Launch microsoft kinectv1 rgbd-camera  
 ```
@@ -61,6 +61,10 @@ roslaunch ironfish_navigation slam_gmapping.launch
 Launch cartographer for slam  
 ```
 roslaunch ironfish_navigation cartographer_ros.launch
+```
+Launch rtabmap for vslam  
+```
+roslaunch ironfish_navigation rtabmap_demo.launch
 ```
 #### Navigation
 Launch navigation  
