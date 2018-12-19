@@ -33,7 +33,7 @@ roslaunch ironfish_ros_control ironfish_ros_control.launch
 ```
 Launch simulation(gazebo) world control node 
 ```
-roslaunch ironfish_description ironfish_gazebo.launch
+roslaunch ironfish_gazebo ironfish_gazebo.launch
 ```
 #### Sensor nodes (only be needed in reality)
 Launch hokuyo LiDAR  
