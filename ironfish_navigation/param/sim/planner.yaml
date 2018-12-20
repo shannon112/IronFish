@@ -7,32 +7,32 @@ GlobalPlanner:
   cost_factor: 0.55
 
 DWAPlannerROS:
-  # Robot configuration parameters  
+  # Robot configuration parameters
   acc_lim_x: 1.0
   acc_lim_y: 0
   acc_lim_th: 1.0
 
   max_vel_x: 0.6
-  min_vel_x: 0.0
+  min_vel_x: -0.05
   max_vel_y: 0
   min_vel_y: 0
 
   max_trans_vel: 0.6
-  min_trans_vel: 0.0
-  max_rot_vel: 0.3
-  min_rot_vel: -0.3
+  min_trans_vel: -0.05
+  max_rot_vel: 0.5
+  min_rot_vel: -0.5
 
   # Goal Tolerance Parameters
   yaw_goal_tolerance: 1.0
   xy_goal_tolerance: 0.2
-  latch_xy_goal_tolerance: false 
+  latch_xy_goal_tolerance: false
 
   # # Forward Simulation Parameters
-  sim_time: 3.0
+  sim_time: 5.0
   # sim_granularity: 0.02
-  vx_samples: 20 
+  vx_samples: 20
   vy_samples: 0
-  vtheta_samples: 60 
+  vtheta_samples: 60
   # penalize_negative_x: true
 
   # # Trajectory scoring parameters
@@ -47,5 +47,3 @@ DWAPlannerROS:
 
   # # Oscillation Prevention Parameters
   # oscillation_reset_dist: 0.25 #How far the robot must travel in meters before oscillation flags are reset (double, default: 0.05)
-
-
