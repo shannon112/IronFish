@@ -2,21 +2,15 @@
 
 <launch>
   <!--choose planner-->
-  <arg name="choose_global" default='2'/>
+  <arg name="choose_global" default='3'/>
   <arg name="choose_local" default='2'/>
-
   <!--move_base parameters-->
-  <arg name="controller_frequency" default="10.0"/><!--4-->
   <arg name="no_static_map" default="true"/>
 
-  <!-- global planner --><!-- navfn/NavfnROS or carrot_planner/CarrotPlanner -->
-  <arg name="base_global_planner" default="carrot_planner/CarrotPlanner" if="$(eval choose_global == 1)">
-    <arg name="carrot_step_size" default="0.05"/>
-    <arg name="carrot_min_dist_from_robot" default="0.50"/>
-    <param name="step_size" value="$(arg carrot_step_size)"/>
-    <param name="min_dist_from_robot" value="$(arg carrot_min_dist_from_robot)"/>
-  </arg>
-  <arg name="base_global_planner" default="navfn/NavfnROS" if="$(eval choose_local == 2)"/>
+  <!-- global planner --><!-- carrot, navfn, global -->
+  <arg name="base_global_planner" default="carrot_planner/CarrotPlanner" if="$(eval choose_global == 1)"/>
+  <arg name="base_global_planner" default="navfn/NavfnROS" if="$(eval choose_global == 2)"/>
+  <arg name="base_global_planner" default="global_planner/GlobalPlanner" if="$(eval choose_global == 3)"/>
 
   <!-- local planner --><!--base, dwa, teb-->
   <arg name="base_local_planner" default="base_local_planner/TrajectoryPlannerROS" if="$(eval choose_local == 1)"/>
@@ -29,15 +23,17 @@
     <remap from="odom" to="/ironfish_diff_drive_controller/odom"/>
 
     <!--decise global/local planner-->
-    <param name="controller_frequency" value="$(arg controller_frequency)"/>
+    <param name="controller_frequency" value="10.0"/>
+    <param name="recovery_behaviour_enabled" value="true"/>
     <param name="base_global_planner" value="$(arg base_global_planner)"/>
     <param name="base_local_planner" value="$(arg base_local_planner)"/>
 
     <!-- planner param -->
+    <rosparam file="$(find ironfish_navigation)/param/sim/global_planner_params.yaml" command="load" />
         <!--choose_local == dwa-->
-    <rosparam file="$(find ironfish_navigation)/param/sim/planner.yaml" command="load" if="$(eval choose_local == 2)"/>
+    <rosparam file="$(find ironfish_navigation)/param/sim/dwa_local_planner.yaml" command="load" if="$(eval choose_local == 2)"/>
         <!--choose_local == teb-->
-    <rosparam file="$(find ironfish_navigation)/param/sim/base_local_planner_params.yaml" command="load" if="$(eval choose_local == 3)"/>
+    <rosparam file="$(find ironfish_navigation)/param/sim/teb_local_planner.yaml" command="load" if="$(eval choose_local == 3)"/>
     <!-- costmap param -->
     <rosparam file="$(find ironfish_navigation)/param/sim/costmap_common.yaml" command="load" ns="global_costmap" />
     <rosparam file="$(find ironfish_navigation)/param/sim/costmap_common.yaml" command="load" ns="local_costmap" />
