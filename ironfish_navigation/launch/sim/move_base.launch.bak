@@ -7,7 +7,6 @@
 
   <!--move_base parameters-->
   <arg name="controller_frequency" default="10.0"/><!--4-->
-  <arg name="no_static_map" default="true"/>
 
   <!-- global planner --><!-- navfn/NavfnROS or carrot_planner/CarrotPlanner -->
   <arg name="base_global_planner" default="carrot_planner/CarrotPlanner" if="$(eval choose_global == 1)">
@@ -27,26 +26,15 @@
   <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
     <remap from="cmd_vel" to="/ironfish_diff_drive_controller/cmd_vel"/>
     <remap from="odom" to="/ironfish_diff_drive_controller/odom"/>
-
-    <!--decise global/local planner-->
+    <!--decise planner-->
     <param name="controller_frequency" value="$(arg controller_frequency)"/>
     <param name="base_global_planner" value="$(arg base_global_planner)"/>
     <param name="base_local_planner" value="$(arg base_local_planner)"/>
-
-    <!-- planner param -->
-        <!--choose_local == dwa-->
-    <rosparam file="$(find ironfish_navigation)/param/sim/planner.yaml" command="load" if="$(eval choose_local == 2)"/>
-        <!--choose_local == teb-->
-    <rosparam file="$(find ironfish_navigation)/param/sim/base_local_planner_params.yaml" command="load" if="$(eval choose_local == 3)"/>
-    <!-- costmap param -->
+    <!--costmap and planner-->
     <rosparam file="$(find ironfish_navigation)/param/sim/costmap_common.yaml" command="load" ns="global_costmap" />
     <rosparam file="$(find ironfish_navigation)/param/sim/costmap_common.yaml" command="load" ns="local_costmap" />
-        <!--no_static_map == false-->
-    <rosparam file="$(find ironfish_navigation)/param/sim/costmap_global_static.yaml" command="load" ns="global_costmap" unless="$(arg no_static_map)"/>
-    <rosparam file="$(find ironfish_navigation)/param/sim/costmap_local_static.yaml" command="load" ns="local_costmap" />
-        <!--no_static_map == true-->
-    <rosparam file="$(find ironfish_navigation)/param/sim/costmap_global.yaml" command="load" ns="global_costmap" if="$(arg no_static_map)"/>
-    <rosparam file="$(find ironfish_navigation)/param/sim/costmap_local.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find ironfish_navigation)/param/sim/local_costmap.yaml" command="load" ns="local_costmap"/>
+    <rosparam file="$(find ironfish_navigation)/param/sim/global_costmap.yaml" command="load" ns="global_costmap"/>
+    <rosparam file="$(find ironfish_navigation)/param/sim/base_local_planner.yaml" command="load" />
   </node>
-
 </launch>

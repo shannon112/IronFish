@@ -4,13 +4,13 @@ update_frequency: 5.0
 track_unknown_space: true #must have
 
 plugins:
-  - {name: static,                  type: "costmap_2d::StaticLayer"}
-  - {name: inflation,               type: "costmap_2d::InflationLayer"}
+  - {name: obstacles_laser,           type: "costmap_2d::ObstacleLayer"}
+  - {name: inflation,                 type: "costmap_2d::InflationLayer"}
 
 
-static_map: true
+static_map: false
 # If you aren't using an existing map or map server,
 # set the static_map parameter to false.
 
-rolling_window: false
+rolling_window: true
 # parameter to true means that the costmap will remain centered around the robot as the robot moves through the world.
