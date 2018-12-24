@@ -3,7 +3,7 @@
 <launch>
   <!--choose planner-->
   <arg name="use_carrot" default="false"/><!--global plaaner-->
-  <arg name="use_trajectory" default="false"/><!--local plaaner-->
+  <arg name="use_trajectory" default="true"/><!--local plaaner-->
 
   <!--move_base parameters-->
   <arg name="controller_frequency" default="10.0"/><!--4-->
