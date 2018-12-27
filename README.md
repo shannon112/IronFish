@@ -66,6 +66,11 @@ Launch rtabmap for vslam
 ```
 roslaunch ironfish_navigation rtabmap_demo.launch
 ```
+#### Localization
+Launch amcl for localization  
+```
+roslaunch ironfish_navigation amcl.launch
+```
 #### Navigation
 Launch navigation  
 ```
