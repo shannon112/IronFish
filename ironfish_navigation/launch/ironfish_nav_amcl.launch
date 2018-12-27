@@ -1,0 +1,41 @@
+<launch>
+  <!--common args-->
+  <arg name="env" default="false"/><!--real=true sim=false-->
+  <arg name="rvizconfig" default="$(find ironfish_navigation)/rviz/ironfish.rviz"/>
+  <arg name="rviz" default="true"/>
+  <arg name="rqt_steering" default="true"/>
+  <arg name="no_static_map" default="false"/>
+  <!--sim args-->
+  <!--arg name="world_name" default="$(find ironfish_gazebo)/world/iceira302.world"/-->
+  <arg name="world_name" default="$(find iceira_gazebo)/world/iceira_v3.world"/>
+  <arg name="map_name" default="$(find ironfish_navigation)/map/test1.yaml" unless="$(arg env)"/>
+  <!--real args-->
+  <arg name="map_name" default="$(find ironfish_navigation)/map/Albert_Einstein_1947.yaml" if="$(arg env)"/>
+
+  <group if="$(arg env)"><!--true, real-->
+    <include file="$(find ironfish_ros_control)/launch/ironfish_ros_control.launch">
+      <arg name="rvizconfig" value="$(arg rvizconfig)"/>
+      <arg name="rviz" value="$(arg rviz)"/>
+      <arg name="rqt_steering" value="$(arg rqt_steering)"/>
+    </include>
+    <include file="$(find ironfish_sensors)/launch/urg.launch"/>
+  </group>
+
+  <group unless="$(arg env)"><!--false, sim-->
+    <include file="$(find ironfish_gazebo)/launch/ironfish_gazebo.launch">
+      <arg name="rvizconfig" value="$(arg rvizconfig)"/>
+      <arg name="rviz" value="$(arg rviz)"/>
+      <arg name="world_name" value="$(arg world_name)"/>
+    </include>
+  </group>
+
+  <include file="$(find ironfish_navigation)/launch/move_base.launch">
+    <arg name="no_static_map" value="$(arg no_static_map)"/>
+  </include>
+
+  <include file="$(find ironfish_navigation)/launch/map_server.launch">
+    <arg name="map" default="$(arg map_name)"/>
+  </include>
+
+  <include file="$(find ironfish_navigation)/launch/amcl.launch"/>
+</launch>
