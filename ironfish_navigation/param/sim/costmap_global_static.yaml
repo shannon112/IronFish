@@ -1,7 +1,20 @@
-global_frame: /map
-rolling_window: false
-track_unknown_space: true
+global_costmap:
+  global_frame: /map
+  #robot_base_frame: base_footprint
+  update_frequency: 10.0
+  track_unknown_space: true #must have
 
-plugins:
-  - {name: static,                  type: "costmap_2d::StaticLayer"}
-  - {name: inflation,               type: "costmap_2d::InflationLayer"}
+  plugins:
+    - {name: static,           type: "costmap_2d::StaticLayer"}
+    - {name: inflation,        type: "costmap_2d::InflationLayer"}
+
+  width: 60.0
+  height: 60.0
+  resolution: 0.02
+
+  static_map: true
+  # If you aren't using an existing map or map server,
+  # set the static_map parameter to false.
+
+  rolling_window: false
+  # parameter to true means that the costmap will remain centered around the robot as the robot moves through the world.
