@@ -5,6 +5,7 @@
   <arg name="rviz" default="true"/>
   <arg name="model" default="$(find ironfish_description)/robots/ironfish.urdf.xacro"/>
   <arg name="world_name" default="$(find ironfish_gazebo)/world/iceira302.world"/>
+  <!--arg name="world_name" default="$(find iceira_gazebo)/world/iceira_v3.world"/-->
   <arg name="rvizconfig" default="$(find ironfish_gazebo)/rviz/ironfish.rviz" />
   <arg name="diffconfig" default="$(find ironfish_ros_control)/config/ironfish_ros_control_sim.yaml" />
   <arg name="x" default="0"/>
@@ -20,9 +21,9 @@
     <arg name="world_name" default="$(arg world_name)"/>
   </include>
 
-  <!-- Convert an xacro and put on parameter server--> 
+  <!-- Convert an xacro and put on parameter server-->
   <param name="robot_description" command="python $(find xacro)/xacro.py $(arg model)" />
- 
+
   <!--Load controller parameter-->
   <rosparam command="load" file="$(arg diffconfig)"/>
 

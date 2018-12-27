@@ -1,13 +1,16 @@
 global_costmap:
   global_frame: /map
   #robot_base_frame: base_footprint
-  update_frequency: 5.0
+  update_frequency: 10.0
   track_unknown_space: true #must have
 
   plugins:
-    - {name: static,                  type: "costmap_2d::StaticLayer"}
-    - {name: inflation,               type: "costmap_2d::InflationLayer"}
+    - {name: static,           type: "costmap_2d::StaticLayer"}
+    - {name: inflation,        type: "costmap_2d::InflationLayer"}
 
+  width: 60.0
+  height: 60.0
+  resolution: 0.02
 
   static_map: true
   # If you aren't using an existing map or map server,
