@@ -6,8 +6,8 @@
   <arg name="rqt_steering" default="true"/>
   <arg name="no_static_map" default="true"/>
   <!--sim args-->
-  <!--arg name="world_name" default="$(find ironfish_gazebo)/world/iceira302.world"/-->
-  <arg name="world_name" default="$(find iceira_gazebo)/world/iceira_v3.world"/>
+  <arg name="world_name" default="$(find ironfish_gazebo)/world/iceira302.world"/>
+  <!--arg name="world_name" default="$(find iceira_gazebo)/world/iceira_v3.world"/-->
 
   <group if="$(arg env)"><!--true, real-->
     <include file="$(find ironfish_ros_control)/launch/ironfish_ros_control.launch">
