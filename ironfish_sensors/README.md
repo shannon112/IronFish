@@ -2,15 +2,15 @@
 This is a ros package for launching the driver of ironfish sensors in real world.  
 
 ### Dependencies
-Install urg_node: http://wiki.ros.org/urg_node
+(if you want to use hokuyo lidar) Install urg_node: http://wiki.ros.org/urg_node
 ```
 sudo apt install ros-kinetic-urg-node
 ```
-Install openni:http://wiki.ros.org/openni_launch
+(if you want to use microsoft kinectv1) Install openni: http://wiki.ros.org/openni_launch
 ```
 Please go through https://www.evernote.com/l/ATvjQg_dJ0JOSIujndgTWSIuqhwF1vAzPVQ
 ```
-Install intelrealsense realsense2_camera: https://github.com/intel-ros/realsense
+(if you want to use intel realsense) Install realsense2_camera: https://github.com/intel-ros/realsense
 ```
 Please read https://www.evernote.com/shard/s315/sh/2b688e7a-322b-4d87-9180-97405ff2e37a/805ffb34a97606c1b0838a7750205e19
 ```
