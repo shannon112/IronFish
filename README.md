@@ -72,13 +72,15 @@ Launch navigation
 roslaunch ironfish_navigation move_base.launch
 ```
 #### High level application
-Launch steering & navigation and slam integration in real world  
+Launch steering, navigation and gmapping integration in sim(or real) world  
 ```
-roslaunch ironfish_navigation ironfish_nav_real.launch
+roslaunch ironfish_navigation ironfish_nav_gmapping.launch
+(roslaunch ironfish_navigation ironfish_nav_gmapping.launch env:=1)
 ```
-Launch steering & navigation and slam integration in simulation world  
+Launch steering, navigation and amcl integration in sim(or real) world  
 ```
-roslaunch ironfish_navigation ironfish_nav_sim.launch
+roslaunch ironfish_navigation ironfish_nav_amcl.launch
+(roslaunch ironfish_navigation ironfish_nav_amcl.launch env:=1)
 ```
 #### Tool nodes
 Launch control panel
