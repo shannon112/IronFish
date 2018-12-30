@@ -1,6 +1,7 @@
 <launch>
   <!--common args-->
   <arg name="env" default="false"/><!--real=true sim=false-->
+  <arg name="dual_scan" default="true"/>
   <arg name="rvizconfig" default="$(find ironfish_navigation)/rviz/ironfish.rviz"/>
   <arg name="rviz" default="true"/>
   <arg name="rqt_steering" default="true"/>
@@ -10,7 +11,7 @@
   <!--arg name="world_name" default="$(find iceira_gazebo)/world/iceira_v3.world"/-->
   <arg name="map_name" default="$(find ironfish_navigation)/map/test0.yaml" unless="$(arg env)"/>
   <!--real args-->
-  <arg name="map_name" default="$(find ironfish_navigation)/map/Albert_Einstein_1947.yaml" if="$(arg env)"/>
+  <arg name="map_name" default="$(find ironfish_navigation)/script/cropped.yaml" if="$(arg env)"/>
 
   <group if="$(arg env)"><!--true, real-->
     <include file="$(find ironfish_ros_control)/launch/ironfish_ros_control.launch">
@@ -18,7 +19,12 @@
       <arg name="rviz" value="$(arg rviz)"/>
       <arg name="rqt_steering" value="$(arg rqt_steering)"/>
     </include>
-    <include file="$(find ironfish_sensors)/launch/urg.launch"/>
+    <group if="$(arg dual_scan)">
+      <include file="$(find ironfish_sensors)/launch/urg_dual.launch"/>
+    </group>
+    <group unless="$(arg dual_scan)">
+      <include file="$(find ironfish_sensors)/launch/urg.launch"/>
+    </group>
   </group>
 
   <group unless="$(arg env)"><!--false, sim-->
@@ -31,6 +37,7 @@
 
   <include file="$(find ironfish_navigation)/launch/move_base.launch">
     <arg name="no_static_map" value="$(arg no_static_map)"/>
+    <arg name="dual_scan" value="$(arg dual_scan)"/>
   </include>
 
   <include file="$(find ironfish_navigation)/launch/map_server.launch">

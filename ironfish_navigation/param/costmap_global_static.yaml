@@ -1,7 +1,7 @@
 global_costmap:
   global_frame: /map
   #robot_base_frame: base_footprint
-  update_frequency: 10.0
+  #update_frequency: 10.0
   track_unknown_space: true #must have
 
   plugins:
@@ -10,7 +10,7 @@ global_costmap:
 
   width: 60.0
   height: 60.0
-  resolution: 0.02
+  resolution: 0.025
 
   static_map: true
   # If you aren't using an existing map or map server,

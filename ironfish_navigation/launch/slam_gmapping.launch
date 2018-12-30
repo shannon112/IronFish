@@ -4,6 +4,6 @@
     <param name="odom_frame" value="odom"/>
     <param name="map_frame" value="map"/>
     <param name="map_update_interval" value="2"/>
-    <param name="delta" value="0.02"/><!--Resolution of the map (in metres per occupancy grid block) -->
+    <param name="delta" value="0.025"/><!--Resolution of the map (in metres per occupancy grid block) -->
   </node>
 </launch>

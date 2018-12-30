@@ -1,15 +1,15 @@
 DWAPlannerROS:
-  acc_lim_x: 1
+  acc_lim_x: 2
   acc_lim_y: 0
   acc_lim_th: 2
 
   max_vel_x: 2.0
-  min_vel_x: -0.1
+  min_vel_x: -2.0
   max_vel_y: 0
   min_vel_y: 0
 
   max_trans_vel: 2.0
-  min_trans_vel: 0
+  min_trans_vel: -2.0
   max_rot_vel: 4.0
   min_rot_vel: -4.0
 
@@ -31,6 +31,7 @@ DWAPlannerROS:
 
   # ==Trajectory scoring parameters==
   #pdist_scale: 5.0
+
   path_distance_bias: 32.0 # The weighting for how much the controller should stay close to the path it was given
   goal_distance_bias: 20.0 # The weighting for how much the controller should attempt to reach its local goal, also controls speed
   occdist_scale: 0.02 # The weighting for how much the controller should attempt to avoid obstacles
