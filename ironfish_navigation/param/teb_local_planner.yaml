@@ -1,6 +1,7 @@
 TebLocalPlannerROS:
+
  odom_topic: odom
- map_frame: /odom
+ map_frame: /map
 
  # Trajectory
 
@@ -13,15 +14,15 @@ TebLocalPlannerROS:
 
  # Robot
 
- max_vel_x: 0.4
- max_vel_x_backwards: 0
- max_vel_theta: 0.3
- acc_lim_x: 0.5
- acc_lim_theta: 0.5
+ max_vel_x: 1
+ max_vel_x_backwards: 1
+ max_vel_theta: 1
+ acc_lim_x: 2
+ acc_lim_theta: 1
  min_turning_radius: 0.0
  footprint_model: # types: "point", "circular", "two_circles", "line", "polygon"
-   type: "circular"
-   radius: 0.30 # for type "circular"
+   type: "point"
+   radius: 0.25 # for type "circular"
    line_start: [-0.3, 0.0] # for type "line"
    line_end: [0.3, 0.0] # for type "line"
    front_offset: 0.2 # for type "two_circles"
@@ -38,11 +39,12 @@ TebLocalPlannerROS:
 
  # Obstacles
 
- min_obstacle_dist: 0.35
+ min_obstacle_dist: 0.4
  include_costmap_obstacles: True
  costmap_obstacles_behind_robot_dist: 1.0
  obstacle_poses_affected: 30
- costmap_converter_plugin: ""
+ costmap_converter_plugin: "costmap_converter::CostmapToPolygonsDBSMCCH"
+ #costmap_converter_plugin: ""
  costmap_converter_spin_thread: True
  costmap_converter_rate: 5
 
@@ -70,7 +72,7 @@ TebLocalPlannerROS:
  enable_homotopy_class_planning: True
  enable_multithreading: True
  simple_exploration: False
- max_number_classes: 3
+ max_number_classes: 4
  roadmap_graph_no_samples: 15
  roadmap_graph_area_width: 5
  h_signature_prescaler: 0.5
@@ -78,3 +80,10 @@ TebLocalPlannerROS:
  obstacle_keypoint_offset: 0.1
  obstacle_heading_threshold: 0.45
  visualize_hc_graph: False
+
+
+costmap_converter/CostmapToPolygonsDBSMCCH:
+ cluster_max_distance: 0.5
+ cluster_min_pts: 2
+ cluster_max_pts: 10000
+ convex_hull_min_pt_separation: 0.1

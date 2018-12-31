@@ -4,7 +4,7 @@
   <!--planner args-->
   <arg name="dual_scan" default="true"/>
   <arg name="choose_global" default='3'/>
-  <arg name="choose_local" default='2'/>
+  <arg name="choose_local" default='3'/>
   <!--costmap args-->
   <arg name="no_static_map" default="true"/>
 
@@ -25,12 +25,11 @@
 
     <!--decise global/local planner-->
     <param name="controller_frequency" value="10.0"/>
-    <param name="recovery_behaviour_enabled" value="true"/>
     <param name="base_global_planner" value="$(arg base_global_planner)"/>
     <param name="base_local_planner" value="$(arg base_local_planner)"/>
 
-    <!-- recovery_behaviour parameters-->
-    <!-- rosparam file="$(find ironfish_navigation)/param/recovery_behaviour.yaml" command="load" /-->
+    <!-- recovery_behavior parameters-->
+    <rosparam file="$(find ironfish_navigation)/param/recovery_behavior.yaml" command="load" />
 
     <!-- planner parameters -->
     <rosparam file="$(find ironfish_navigation)/param/global_planner.yaml" command="load"  if="$(eval choose_global == 3)" />

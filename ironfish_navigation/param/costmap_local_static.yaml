@@ -6,8 +6,8 @@ local_costmap:
   # The "publish_frequency" parameter determines the rate, in Hz,
   # at which the costmap will publish visualization information
 
-  width: 5.0
-  height: 5.0
+  width: 8.0
+  height: 8.0
   resolution: 0.025
   # parameters set the width (meters), height (meters), and resolution (meters/cell) of the costmap.
   # Note that its fine for the resolution of this grid to be different than the resolution of your static map,
