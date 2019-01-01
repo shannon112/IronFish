@@ -17,6 +17,11 @@ http://wiki.ros.org/move_base
 ```
 sudo apt install ros-kinetic-navigation
 ```
+- Install teb_local_planner:
+http://wiki.ros.org/teb_local_planner
+```
+sudo apt install ros-kinetic-teb-local-planner
+```
 
 # Getting more info if you are interested in this package
 ### Dependencies reference
