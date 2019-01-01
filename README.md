@@ -41,7 +41,7 @@ Launch simulation(gazebo) world control node
 roslaunch ironfish_gazebo ironfish_gazebo.launch
 ```
 #### Sensor nodes (only be needed in reality)
-Launch hokuyo LiDAR  
+Launch hokuyo laser scanner  
 ```
 roslaunch ironfish_sensors urg.launch
 ```
@@ -66,6 +66,14 @@ Launch rtabmap for vslam
 ```
 roslaunch ironfish_navigation rtabmap_demo.launch
 ```
+Launch map saver for saving the map as test66.yaml and test66.pgm in ./ironfish_navigation/map/ after slam  
+```
+roslaunch ironfish_navigation map_saver.launch number:=66
+```
+Launch map server for publishing the known map  
+```
+roslaunch ironfish_navigation map_sever.launch
+```
 #### Localization
 Launch amcl for localization  
 ```
@@ -87,22 +95,28 @@ Launch steering, navigation and amcl integration in sim(or real) world
 roslaunch ironfish_navigation ironfish_nav_amcl.launch
 (roslaunch ironfish_navigation ironfish_nav_amcl.launch env:=1)
 ```
-#### Tool nodes
-Launch control panel
+#### Tools
+Launch control panel  
 ```
 rosrun rqt_robot_steering rqt_robot_steering
 ```
-Tuning config
+Tuning config online  
 ```
 rosrun rqt_reconfigure rqt_reconfigure
 ```
-Analyzing
+Cropping map after using map saver saves it  
+```
+cd ./ironfish_navigation/script
+python crop_map.py <YOUR_MAP.yaml>
+```
+Analyzing nodes and topics relationship  
 ```
 rosrun rqt_graph rqt_graph
 ```
 <img src="https://github.com/shannon112/IronFish/blob/master/rqt_graph(debug off).png" width="800">
 <img src="https://github.com/shannon112/IronFish/blob/master/rqt_graph.png" width="800">
 
+Analyzing tf relationship
 ```
 rosrun rqt_tf_tree rqt_tf_tree
 ```
