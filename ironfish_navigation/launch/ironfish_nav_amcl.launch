@@ -8,11 +8,11 @@
   <arg name="no_static_map" default="false"/>
   <!--sim args-->
   <!--arg name="world_name" default="$(find ironfish_gazebo)/world/iceira302.world"/-->
+  <!--arg name="map_name" default="$(find ironfish_navigation)/map/iceira302.yaml" unless="$(arg env)"/-->
   <arg name="world_name" default="$(find iceira_gazebo)/world/iceira_v3.world"/>
-  <!--arg name="map_name" default="$(find ironfish_navigation)/map/test0.yaml" unless="$(arg env)"/-->
-  <arg name="map_name" default="$(find ironfish_navigation)/map/test1.yaml" unless="$(arg env)"/>
+  <arg name="map_name" default="$(find ironfish_navigation)/map/iceira_v3.yaml" unless="$(arg env)"/>
   <!--real args-->
-  <arg name="map_name" default="$(find ironfish_navigation)/script/cropped.yaml" if="$(arg env)"/>
+  <arg name="map_name" default="$(find ironfish_navigation)/map/iceira3F_real_cropped.yaml" if="$(arg env)"/>
 
   <group if="$(arg env)"><!--true, real-->
     <include file="$(find ironfish_ros_control)/launch/ironfish_ros_control.launch">
