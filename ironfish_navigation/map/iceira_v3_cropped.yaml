@@ -1,0 +1,6 @@
+free_thresh: 0.196
+image: iceira_v3_cropped.pgm
+negate: 0
+occupied_thresh: 0.65
+origin: [-27.120000000000005, -10.420000000000002, 0.0]
+resolution: 0.02

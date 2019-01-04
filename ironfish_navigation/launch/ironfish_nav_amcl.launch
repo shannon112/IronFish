@@ -10,7 +10,7 @@
   <!--arg name="world_name" default="$(find ironfish_gazebo)/world/iceira302.world"/-->
   <!--arg name="map_name" default="$(find ironfish_navigation)/map/iceira302.yaml" unless="$(arg env)"/-->
   <arg name="world_name" default="$(find iceira_gazebo)/world/iceira_v3.world"/>
-  <arg name="map_name" default="$(find ironfish_navigation)/map/iceira_v3.yaml" unless="$(arg env)"/>
+  <arg name="map_name" default="$(find ironfish_navigation)/map/iceira_v3_cropped.yaml" unless="$(arg env)"/>
   <!--real args-->
   <arg name="map_name" default="$(find ironfish_navigation)/map/iceira3F_real_cropped.yaml" if="$(arg env)"/>
 
