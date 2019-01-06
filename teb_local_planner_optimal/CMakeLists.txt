@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(simple_node)
+project(teb_local_planner_optimal)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
@@ -9,7 +9,6 @@ project(simple_node)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   roscpp
-  rospy
   std_msgs
   rosgraph_msgs
 )
@@ -106,7 +105,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES benny_tutorials
-  CATKIN_DEPENDS roscpp rospy std_msgs rosgraph_msgs
+  CATKIN_DEPENDS roscpp std_msgs rosgraph_msgs
 #  DEPENDS system_lib
 )
 
@@ -136,8 +135,8 @@ include_directories(
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 # add_executable(${PROJECT_NAME}_node src/benny_tutorials_node.cpp)
-add_executable(publisher_node src/simple_publisher.cpp)
-add_executable(reset_costmap_node src/simple_subscriber.cpp)
+add_executable(service_test src/service_test.cpp)
+add_executable(reset_costmap src/reset_costmap.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -151,8 +150,8 @@ add_executable(reset_costmap_node src/simple_subscriber.cpp)
 
 ## Specify libraries to link a library or executable target against
 ## 標示出header files 可執行的binary
-target_link_libraries(publisher_node ${catkin_LIBRARIES})
-target_link_libraries(reset_costmap_node ${catkin_LIBRARIES})
+target_link_libraries(service_test ${catkin_LIBRARIES})
+target_link_libraries(reset_costmap ${catkin_LIBRARIES})
 
 #############
 ## Install ##

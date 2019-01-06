@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <package format="2">
 
-  <name>simple_node</name>
+  <name>teb_local_planner_optimal</name>
   <version>0.0.0</version>
-  <description>The simple_node package</description>
+  <description>teb_local_planner_optimal package</description>
 
-  <maintainer email="bennyc0116@gmail.com">Benny</maintainer>
+  <maintainer email="r07921001@ntu.edu.tw">shannon112</maintainer>
   <license>BSD</license>
   <!-- <url type="website">http://wiki.ros.org/benny_tutorials</url> -->
   <!-- <author email="bennyc0116@gmail.com">Benny</author> -->
@@ -13,19 +13,16 @@
   <buildtool_depend>catkin</buildtool_depend>
 
   <build_depend>roscpp</build_depend>
-  <build_depend>rospy</build_depend>
   <build_depend>std_msgs</build_depend>
   <build_depend>rosgraph_msgs</build_depend>
 
 
   <build_export_depend>roscpp</build_export_depend>
-  <build_export_depend>rospy</build_export_depend>
   <build_export_depend>std_msgs</build_export_depend>
   <build_export_depend>rosgraph_msgs</build_export_depend>
 
 
   <exec_depend>roscpp</exec_depend>
-  <exec_depend>rospy</exec_depend>
   <exec_depend>std_msgs</exec_depend>
   <exec_depend>rosgraph_msgs</exec_depend>
 

@@ -4,8 +4,10 @@
 
 int main(int argc, char **argv)
 {
-  ros::init(argc, argv, "publisher_node");
+  ros::init(argc, argv, "service_test");
   ros::NodeHandle n;
+
+  /*method1
   ros::ServiceClient clear_map_client;
   clear_map_client=n.serviceClient<std_srvs::Empty>("move_base/clear_costmaps");
   std_srvs::Empty srv;
@@ -16,7 +18,10 @@ int main(int argc, char **argv)
   else
   {
     ROS_ERROR("Failed to call service");
-    return 1;
-  }
-  return 0;
+  }*/
+
+  /*method2*/
+  std_srvs::Empty srv;
+  ros::service::call("/move_base/clear_costmaps",srv);
+
 }
