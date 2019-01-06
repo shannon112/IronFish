@@ -14,7 +14,7 @@ void my_callback(const std_msgs::String& msg)
       time_last_call_service = time_last_call_service;
     }else if ((current_time-time_last_call_service).toSec() >= reset_gap_ros_time){
       ros::service::call("/move_base/clear_costmaps",srv);
-      ROS_INFO("%s\n", msg.data.c_str());
+      ROS_INFO("%s, reset costmaps now!\n", msg.data.c_str());
       time_last_call_service = ros::Time::now();
     }
 }

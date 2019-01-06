@@ -29,7 +29,7 @@
     <param name="base_local_planner" value="$(arg base_local_planner)"/>
 
     <!-- recovery_behavior parameters-->
-    <rosparam file="$(find ironfish_navigation)/param/recovery_behavior.yaml" command="load" />
+    <!--rosparam file="$(find ironfish_navigation)/param/recovery_behavior.yaml" command="load" /-->
 
     <!-- planner parameters -->
     <rosparam file="$(find ironfish_navigation)/param/global_planner.yaml" command="load"  if="$(eval choose_global == 3)" />
