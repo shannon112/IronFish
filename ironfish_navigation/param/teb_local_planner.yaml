@@ -14,10 +14,10 @@ TebLocalPlannerROS:
 
  # Robot
 
- max_vel_x: 0.4
- max_vel_x_backwards: 0.2
+ max_vel_x: 0.6
+ max_vel_x_backwards: 0.3
  max_vel_theta: 0.3
- acc_lim_x: 0.1
+ acc_lim_x: 1.2 #max break distance=15cm
  acc_lim_theta: 0.5
  min_turning_radius: 0.0 # Minimum turning radius of a carlike robot (set to zero for a diff-drive robot).
 

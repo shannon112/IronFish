@@ -37,8 +37,8 @@ ironfish_diff_drive_controller:
       max_velocity           : 2.0  # m/s
       min_velocity           : -2.0 # m/s
       has_acceleration_limits: true
-      max_acceleration       : 0.5  # m/s^2 #for teb
-      min_acceleration       : -0.5 # m/s^2 #for teb
+      max_acceleration       : 1.2  # m/s^2 #for teb
+      min_acceleration       : -1.2 # m/s^2 #for teb
   angular:
     z:
       has_velocity_limits    : true
