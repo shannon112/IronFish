@@ -18,6 +18,10 @@ Please read https://www.evernote.com/shard/s315/sh/2b688e7a-322b-4d87-9180-97405
 ```
 Please read https://www.evernote.com/l/ATsbvRpS7nZLiKoklp756MNPt2dNEVbX-9I
 ```
+(if you want to use sensor fusion) Install robot_pose_ekf: http://wiki.ros.org/robot_pose_ekf
+```
+sudo apt install ros-kinetic-robot-pose-ekf
+```
 
 # Getting more info if you are interested in this package
 ### Dependencies reference
