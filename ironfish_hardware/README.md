@@ -5,7 +5,7 @@ before implementing ros on it.
 
 ## Appearence
 <img src="https://i.imgur.com/oY3Imbg.png" width="400"> <img src="https://i.imgur.com/fsRahLl.png" width="400"> 
-<img src="https://i.imgur.com/SuPGbef.jpg" width="400"> 
+<img src="https://i.imgur.com/SuPGbef.jpg" width="400"> <img src="https://i.imgur.com/l7LderM.png" width="300">
 
 ## Materials
 |#| Item                               | Spec name                  | Ref / Remarks   |
