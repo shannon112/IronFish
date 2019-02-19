@@ -111,6 +111,11 @@ roslaunch ironfish_navigation ironfish_nav_amcl.launch
 (roslaunch ironfish_navigation ironfish_nav_amcl.launch env:=1)
 ```
 #### Tools
+Launch rviz gui
+```
+rviz
+rosrun rviz rviz -d <config_file_name>
+```
 Launch control panel  
 ```
 rosrun rqt_robot_steering rqt_robot_steering
