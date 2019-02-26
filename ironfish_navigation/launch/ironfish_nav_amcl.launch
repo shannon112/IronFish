@@ -11,8 +11,11 @@
   <!--arg name="map_name" default="$(find ironfish_navigation)/map/iceira302.yaml" unless="$(arg env)"/-->
   <arg name="world_name" default="$(find iceira_gazebo)/world/iceira_v3.world"/>
   <arg name="map_name" default="$(find ironfish_navigation)/map/iceira_v3.yaml" unless="$(arg env)"/>
+  <arg name="map_name_origin" default="$(find ironfish_navigation)/map/iceira_v3.yaml" unless="$(arg env)"/>
   <!--real args-->
   <arg name="map_name" default="$(find ironfish_navigation)/map/iceira3F_real_cropped.yaml" if="$(arg env)"/>
+  <arg name="map_name_origin" default="$(find ironfish_navigation)/map/iceira3F_real_cropped_origin.yaml" if="$(arg env)"/>
+
 
   <group if="$(arg env)"><!--true, real-->
     <include file="$(find ironfish_ros_control)/launch/ironfish_ros_control.launch">
@@ -41,9 +44,17 @@
     <arg name="dual_scan" value="$(arg dual_scan)"/>
   </include>
 
-  <include file="$(find ironfish_navigation)/launch/map_server.launch">
+  <!--include file="$(find ironfish_navigation)/launch/map_server.launch">
     <arg name="map" default="$(arg map_name)"/>
-  </include>
+  </include-->
 
-  <include file="$(find ironfish_navigation)/launch/amcl.launch"/>
+  <node pkg="map_server" type="map_server" name="map_server" args="$(arg map_name)"/>
+  <node pkg="map_server" type="map_server" name="map_server_origin" args="$(arg map_name_origin)">
+    <remap from="map" to="/map_origin"/>
+  </node>
+
+ <include file="$(find ironfish_navigation)/launch/amcl.launch">
+    <!--remap from="map" to="/map_origin"/-->
+ </include>
+
 </launch>

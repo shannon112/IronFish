@@ -53,5 +53,6 @@
     <param name="initial_cov_yy"            value="15"/>
     <param name="initial_cov_aa"            value="0.5"/>
     <remap from="scan"                      to="$(arg scan_topic)"/>
+    <remap from="map"			    to="map_origin"/>
   </node>
 </launch>
