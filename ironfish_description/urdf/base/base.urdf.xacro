@@ -3,6 +3,8 @@
   <xacro:include filename="$(find ironfish_description)/urdf/base/base.transmission.xacro"/>
   <xacro:include filename="$(find ironfish_description)/urdf/base/base.gazebo.xacro" />
   <xacro:include filename="$(find ironfish_description)/urdf/sensors/hokuyo_utm30lx.urdf.xacro" />
+  <xacro:include filename="$(find ironfish_description)/urdf/sensors/_d435.urdf.xacro" />
+
 
   <xacro:property name="pi" value="3.1415926535897931" />
 
@@ -31,7 +33,7 @@
             filename="package://ironfish_description/meshes/rwheel_link.STL" />
         </geometry>
         <material
-          name="black">
+          name="white">
         </material>
       </visual>
       <collision>
@@ -88,7 +90,7 @@
             filename="package://ironfish_description/meshes/lwheel_link.STL" />
         </geometry>
         <material
-          name="black">
+          name="white">
         </material>
       </visual>
       <collision>
@@ -121,7 +123,7 @@
   </xacro:macro>
 
 
-    <xacro:macro name="ironfish_base">
+  <xacro:macro name="ironfish_base">
       <link name="base_footprint">
         <visual>
           <origin xyz="0 0 0" rpy="0 0 0" />
@@ -132,7 +134,7 @@
       </link>
 
       <joint name="base_footprint_joint" type="fixed">
-        <origin xyz="0 0 0.1124430740677247" rpy="0 0 0" />
+        <origin xyz="0 0 0.1014430740677247" rpy="0 0 0" />
         <child link="base_link" />
         <parent link="base_footprint"/>
       </joint>
@@ -174,6 +176,11 @@
           </geometry>
         </collision>
       </link>
+
+    <!-- Intel realsense-->
+    <sensor_d435 parent="base_link">
+      <origin xyz="0.130 0.006 0.229" rpy="0 0 0"/>
+    </sensor_d435>
 
     <!-- Wheel macros -->
     <xacro:rwheel />

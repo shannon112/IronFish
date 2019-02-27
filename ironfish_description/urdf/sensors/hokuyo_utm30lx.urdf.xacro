@@ -4,7 +4,7 @@
   <xacro:macro name="hokuyo_utm30lx" params="name parent">
     <joint name="${name}_joint" type="fixed">
       <!--origin xyz="0.105 0.000 0.229" rpy="0 0 0" /-->
-      <origin xyz="0.130 0.006 0.229" rpy="0 0 0" />
+      <origin xyz="0.130 0.006 0.0914430740677247" rpy="0 0 0" />
       <parent link="${parent}"/>
       <child link="${name}_link"/>
     </joint>
@@ -37,7 +37,7 @@
   <xacro:macro name="hokuyo_utm30lx_back" params="name parent">
     <joint name="${name}_joint" type="fixed">
       <!--origin xyz="0.105 0.000 0.229" rpy="0 0 0" /-->
-      <origin xyz="-0.180 0.006 0.229" rpy="0 0 3.1415926535897931" />
+      <origin xyz="-0.180 0.006 0.0914430740677247" rpy="0 0 3.1415926535897931" />
       <parent link="${parent}"/>
       <child link="${name}_link"/>
     </joint>
