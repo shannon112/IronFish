@@ -174,10 +174,10 @@
         </link>
       </model>
       <model name='cafe_table_0'>
-        <pose frame=''>1.19752 1.06944 0 0 -0 0</pose>
+        <pose frame=''>1.19752 1.07125 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>1.19752 1.06944 0 0 -0 0</pose>
+          <pose frame=''>1.19752 1.07125 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -445,7 +445,7 @@
         <kinematic>0</kinematic>
         <gravity>1</gravity>
       </link>
-      <pose frame=''>1.19752 1.06944 0 0 -0 0</pose>
+      <pose frame=''>1.19752 1.07112 0 0 -0 0</pose>
     </model>
     <model name='unit_box_0'>
       <static>1</static>
@@ -715,6 +715,118 @@
       </link>
       <pose frame=''>1.59927 0.848864 0.755 0 -0 0</pose>
     </model>
+    <model name='artag_1'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>0.39</mass>
+          <inertia>
+            <ixx>0.00058</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00058</iyy>
+            <iyz>0</iyz>
+            <izz>0.00058</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.09 0.09 0.09</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.09 0.09 0.09</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://models/artag/materials/scripts</uri>
+              <uri>model://models/artag/materials/textures</uri>
+              <name>Artag/Diffuse</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>0.738141 0.65962 0.69 0 -0 0</pose>
+    </model>
+
+    <model name='artag_2'>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <mass>0.39</mass>
+          <inertia>
+            <ixx>0.00058</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00058</iyy>
+            <iyz>0</iyz>
+            <izz>0.00058</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.09 0.09 0.000001</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.09 0.09 0.000001</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://models/artag/materials/scripts</uri>
+              <uri>model://models/artag/materials/textures</uri>
+              <name>Artag/Diffuse</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>0.738141 1.07112 0.775001 0 -0 0</pose>
+    </model>
+
     <model name='bowl'>
       <link name='link'>
         <inertial>
