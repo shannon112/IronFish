@@ -733,7 +733,7 @@
         <collision name='collision'>
           <geometry>
             <box>
-              <size>0.09 0.09 0.09</size>
+              <size>0.15 0.00001 0.15</size>
             </box>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -753,14 +753,14 @@
         <visual name='visual'>
           <geometry>
             <box>
-              <size>0.09 0.09 0.09</size>
+              <size>0.15 0.00001 0.15</size>
             </box>
           </geometry>
           <material>
             <script>
               <uri>model://models/artag/materials/scripts</uri>
               <uri>model://models/artag/materials/textures</uri>
-              <name>Artag/Diffuse</name>
+              <name>Artag_01/Diffuse</name>
             </script>
           </material>
         </visual>
@@ -768,7 +768,8 @@
         <kinematic>0</kinematic>
         <gravity>1</gravity>
       </link>
-      <pose frame=''>0.738141 0.65962 0.69 0 -0 0</pose>
+      <!--pose frame=''>0.738141 0.65962 0.69 0 -0 0</pose-->
+      <pose frame=''>0.738141 0.65962 0.075 0 -0 0</pose>
     </model>
 
     <model name='artag_2'>
@@ -816,7 +817,7 @@
             <script>
               <uri>model://models/artag/materials/scripts</uri>
               <uri>model://models/artag/materials/textures</uri>
-              <name>Artag/Diffuse</name>
+              <name>Artag_02/Diffuse</name>
             </script>
           </material>
         </visual>
