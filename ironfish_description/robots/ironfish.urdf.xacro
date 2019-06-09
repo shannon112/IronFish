@@ -4,12 +4,59 @@
   <xacro:include filename="$(find ironfish_description)/urdf/base/base.urdf.xacro"/>
   <!-- colors for ironfish -->
   <xacro:include filename="$(find ironfish_description)/urdf/materials.xacro"/>
-  <!-- Gazebo plugin -->
-  <xacro:include filename="$(find ironfish_description)/gazebo/gazebo.urdf.xacro"/>
   <!-- Variables -->
   <xacro:property name="M_PI" value="3.1415926535897931" />
 
   <!-- Use the macros to define ironfish -->
   <xacro:ironfish_base/>
+
+  <!-- Gazebo plugin for ROS Control -->
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace></robotNamespace>
+    </plugin>
+  </gazebo>
+
+  <!--gazebo>
+    <plugin name="ground_truth" filename="libgazebo_ros_p3d.so">
+      <frameName>map</frameName>
+      <bodyName>base_link</bodyName>
+      <topicName>base_pose_ground_truth</topicName>
+      <updateRate>30.0</updateRate>
+    </plugin>
+  </gazebo-->
+
+  <gazebo>
+    <!--hector_gazebo_plugins-->
+    <plugin name="imu_controller" filename="libhector_gazebo_ros_imu.so">
+      <robotNamespace>/</robotNamespace>
+      <frameId>base_link</frameId>
+      <updateRate>50.0</updateRate>
+      <bodyName>base_link</bodyName>
+      <topicName>imu/data</topicName>
+      <accelDrift>0.005 0.005 0.005</accelDrift>
+      <accelGaussianNoise>0.005 0.005 0.005</accelGaussianNoise>
+      <rateDrift>0.005 0.005 0.005 </rateDrift>
+      <rateGaussianNoise>0.005 0.005 0.005 </rateGaussianNoise>
+      <headingDrift>0.005</headingDrift>
+      <headingGaussianNoise>0.005</headingGaussianNoise>
+    </plugin>
+  </gazebo>
+
+  <!--gazebo>
+    <plugin name="gps_controller" filename="libhector_gazebo_ros_gps.so">
+      <updateRate>40</updateRate>
+      <robotNamespace>/$(arg nsp)</robotNamespace>
+      <frameId>$(arg tfpre)/base_link</frameId>
+      <bodyName>base_link</bodyName>
+      <topicName>navsat/fix</topicName>
+      <velocityTopicName>navsat/vel</velocityTopicName>
+      <referenceLatitude>49.9</referenceLatitude>
+      <referenceLongitude>8.9</referenceLongitude>
+      <referenceHeading>0</referenceHeading>
+      <referenceAltitude>0</referenceAltitude>
+      <drift>0.0001 0.0001 0.0001</drift>
+    </plugin>
+  </gazebo-->
 
 </robot>

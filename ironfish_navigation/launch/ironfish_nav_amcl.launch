@@ -39,10 +39,10 @@
     </include>
   </group>
 
-  <include file="$(find ironfish_navigation)/launch/move_base.launch">
+  <!--include file="$(find ironfish_navigation)/launch/move_base.launch">
     <arg name="no_static_map" value="$(arg no_static_map)"/>
     <arg name="dual_scan" value="$(arg dual_scan)"/>
-  </include>
+  </include-->
 
   <!--include file="$(find ironfish_navigation)/launch/map_server.launch">
     <arg name="map" default="$(arg map_name)"/>
@@ -53,8 +53,6 @@
     <remap from="map" to="/map_origin"/>
   </node>
 
- <include file="$(find ironfish_navigation)/launch/amcl.launch">
-    <!--remap from="map" to="/map_origin"/-->
- </include>
+ <include file="$(find ironfish_navigation)/launch/amcl.launch"/>
 
 </launch>
