@@ -4,7 +4,8 @@ This folder is for the robot hardware info. No code inside.
 before implementing ros on it.
 
 ## Appearence
-<img src="https://github.com/shannon112/IronFish/blob/master/ironfish_hardware/IMG_0543.png" width="200"> <img src="https://github.com/shannon112/IronFish/blob/master/ironfish_hardware/IMG_0544.png" width="200"> <img src="https://github.com/shannon112/IronFish/blob/master/ironfish_hardware/v3-1.JPG" width="200"> <img src="https://github.com/shannon112/IronFish/blob/master/ironfish_hardware/v3-2.JPG" width="200">
+<img src="https://i.imgur.com/oY3Imbg.png" width="400"> <img src="https://i.imgur.com/fsRahLl.png" width="400"> 
+<img src="https://i.imgur.com/SuPGbef.jpg" width="400"> <img src="https://i.imgur.com/l7LderM.png" width="300">
 
 ## Materials
 |#| Item                               | Spec name                  | Ref / Remarks   |

@@ -1,16 +1,25 @@
 # IronFish
 <img src="https://github.com/shannon112/IronFish/blob/master/ironfish.png" width="350">
 
-Ironfish is a simple ROS mobile robot that you can simply build it by yourself!   (**ROS kinetic** is recommended)  
+Ironfish is a simple ROS based diff-drive mobile robot that you can simply build it by yourself!  
+(**ROS kinetic** is recommended)  
 Inspiration from:  
 https://github.com/willie5588912/rsc_car_course  
 https://github.com/willie5588912/iubot1  
 Especially thanks to @willie5588912  
-* Processor: Your laptop
-* Sensor: Kinect, RealSense, Hokuyo LiDAR
+
+SW  
+* amcl localization  
+* gmapping SLAM  
+* move_base navigation stack  
+* fine-tuned teb_local_planner  
+* robot_pose_ekf sensor fusion of odometry  
+
+HW  
+* Processor: Your laptop (or Nvidia TX2)
+* Sensor: Kinect, RealSense, Hokuyo_LiDAR, Razor_IMU, Faulhaber_encoder
 * Actuator: Two DC motor with two wheels, and one guide wheel.  
   
-
   
 ## Overview 
 There are 8 pkgs in IronFish:   
@@ -44,6 +53,7 @@ roslaunch ironfish_gazebo ironfish_gazebo.launch
 Launch hokuyo laser scanner  
 ```
 roslaunch ironfish_sensors urg.launch
+roslaunch ironfish_sensors urg_dual.launch
 ```
 Launch intel realsense rgbd-camera  
 ```
@@ -52,6 +62,11 @@ roslaunch ironfish_sensors rs_camera.launch
 Launch microsoft kinectv1 rgbd-camera  
 ```
 roslaunch ironfish_sensors openni.launch
+```
+Launch SparkFun 9DOF Razor IMU M0  
+```
+roslaunch ironfish_sensors razor-pub.launch
+roslaunch ironfish_sensors razor-pub-and-display.launch
 ```
 #### Mapping aka. SLAM
 Launch gmapping for slam  
@@ -96,6 +111,11 @@ roslaunch ironfish_navigation ironfish_nav_amcl.launch
 (roslaunch ironfish_navigation ironfish_nav_amcl.launch env:=1)
 ```
 #### Tools
+Launch rviz gui
+```
+rviz
+rosrun rviz rviz -d <config_file_name>
+```
 Launch control panel  
 ```
 rosrun rqt_robot_steering rqt_robot_steering
