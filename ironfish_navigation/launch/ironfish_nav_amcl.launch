@@ -11,6 +11,7 @@
   <!--arg name="map_name" default="$(find ironfish_navigation)/map/iceira302.yaml" unless="$(arg env)"/-->
   <arg name="world_name" default="$(find iceira_gazebo)/world/iceira_v3.world"/>
   <arg name="map_name" default="$(find ironfish_navigation)/map/iceira_v3_cropped.yaml" unless="$(arg env)"/>
+  <arg name="map_name_origin" default="$(find ironfish_navigation)/map/iceira_v3_cropped.yaml" unless="$(arg env)"/>
   <!--real args-->
   <arg name="map_name" default="$(find ironfish_navigation)/map/iceira3F_real_cropped.yaml" if="$(arg env)"/>
   <arg name="map_name_origin" default="$(find ironfish_navigation)/map/iceira3F_real_cropped_origin.yaml" if="$(arg env)"/>
@@ -52,15 +53,5 @@
     <remap from="map" to="/map_origin"/>
   </node>
 
- <include file="$(find ironfish_navigation)/launch/amcl.launch"/>
-
-<<<<<<< HEAD
-=======
   <include file="$(find ironfish_navigation)/launch/amcl.launch"/>
-
-  <node name="reset_costmap_node" pkg="teb_local_planner_optimal" type="reset_costmap"
-    respawn="true" output="screen">
-  </node>
-
->>>>>>> 21075bec2229f15c2191981133d83833d3c37498
 </launch>

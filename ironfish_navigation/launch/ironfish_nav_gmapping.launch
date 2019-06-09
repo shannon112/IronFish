@@ -40,8 +40,8 @@
 
   <include file="$(find ironfish_navigation)/launch/slam_gmapping.launch"/>
 
-  <node name="reset_costmap_node" pkg="teb_local_planner_optimal" type="reset_costmap"
+  <!--node name="reset_costmap_node" pkg="teb_local_planner_optimal" type="reset_costmap"
     respawn="true" output="screen">
-  </node>
+  </node-->
 
 </launch>
