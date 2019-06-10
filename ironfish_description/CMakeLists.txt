@@ -148,7 +148,7 @@ catkin_package(
 #############
 
 install(
-  DIRECTORY robots meshes urdf gazebo
+  DIRECTORY robots meshes urdf 
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 # all install targets should use catkin DESTINATION variables
