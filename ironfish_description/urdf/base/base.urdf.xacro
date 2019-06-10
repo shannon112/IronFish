@@ -179,7 +179,8 @@
 
     <!-- Intel realsense-->
     <sensor_d435 parent="base_link">
-      <origin xyz="0.130 0.006 0.229" rpy="0 0 0"/>
+      <!--origin xyz="0.135 0.006 0.178" rpy="0 0 0"/--> <!-- align the front edge-->
+      <origin xyz="0.047 0.006 0.463" rpy="0 0 0"/> <!--real measure from blue extend version-->
     </sensor_d435>
 
     <!-- Wheel macros -->
