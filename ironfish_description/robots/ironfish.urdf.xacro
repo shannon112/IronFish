@@ -30,9 +30,9 @@
     <!--hector_gazebo_plugins-->
     <plugin name="imu_controller" filename="libhector_gazebo_ros_imu.so">
       <robotNamespace>/</robotNamespace>
-      <frameId>imu_base_link</frameId>
+      <frameId>base_imu_link</frameId>
       <updateRate>50.0</updateRate>
-      <bodyName>imu_base_link</bodyName>
+      <bodyName>base_imu_link</bodyName>
       <topicName>imu/data</topicName>
       <accelDrift>0.005 0.005 0.005</accelDrift>
       <accelGaussianNoise>0.005 0.005 0.005</accelGaussianNoise>
