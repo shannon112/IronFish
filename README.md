@@ -13,7 +13,12 @@ SW
 * gmapping SLAM  
 * move_base navigation stack  
 * fine-tuned teb_local_planner  
+  * A robust AMR navigation method with robust obstacles avoidance in dynamic environment using ROS
+  * Slide: https://www.slideshare.net/secret/i1A33v31jeaXL6
+  * Demo video1: https://www.youtube.com/watch?v=_dUWm0-mwfQ
+  * Demo video2: https://www.youtube.com/watch?v=SFJsb6ZNtBY
 * robot_pose_ekf sensor fusion of odometry  
+* Cartographer SLAM: https://github.com/shannon112/IronFish_cartographer
 
 HW  
 * Processor: Your laptop (or Nvidia TX2)
