@@ -6,7 +6,7 @@ Ironfish is a simple ROS based diff-drive mobile robot that you can simply build
 Inspiration from:  
 https://github.com/willie5588912/rsc_car_course  
 https://github.com/willie5588912/iubot1  
-Especially thanks to @willie5588912  
+Especially thanks to @willie5588912 developing ros_control  
 
 SW  
 * amcl localization  
